@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="О компании GAIA-RU - официальный представитель корейской компании GAIA Corp.">
+    <title>О компании - GAIA-RU</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .faq-item {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: var(--spacing-md);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--color-white);
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-dark);
+            transition: var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background: var(--color-gray-light);
+        }
+
+        .faq-question i {
+            color: var(--color-primary);
+            transition: var(--transition-base);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 var(--spacing-md);
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: var(--spacing-md);
+        }
+
+        .faq-answer p {
+            color: var(--color-gray);
+            line-height: 1.8;
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .stats-number {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stats-label {
+            font-size: var(--font-size-lg);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </div>
+                    <div class="working-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 09:00 - 18:00</span>
+                    </div>
+                </div>
+                <div class="header-socials">
+                    <a href="https://vk.com/gaiaru" target="_blank" title="Мы в VK"><i class="fab fa-vk"></i></a>
+                    <a href="https://youtube.com/@gaiaru" target="_blank" title="Наш YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">GAIA-RU</a>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="technology.html" class="nav-link">О технологии</a>
+                    <a href="team.html" class="nav-link">Команда</a>
+                    <a href="about.html" class="nav-link active">О компании</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="padding-top: var(--spacing-xl);">
+        <div class="container">
+            <p class="section-subtitle">О компании</p>
+            <h1 class="section-title">GAIA-RU - официальный представитель</h1>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-3">
+                <div class="stats-card reveal">
+                    <div class="stats-number">5+</div>
+                    <div class="stats-label">Лет на рынке</div>
+                </div>
+
+                <div class="stats-card reveal">
+                    <div class="stats-number">10+</div>
+                    <div class="stats-label">Лет технологии в мире</div>
+                </div>
+
+                <div class="stats-card reveal">
+                    <div class="stats-number">100%</div>
+                    <div class="stats-label">Экологичность</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="card reveal" style="max-width: 900px; margin: 0 auto;">
+                <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">
+                    <i class="fas fa-award"></i> Более 5 лет на рынке
+                </h2>
+                <p style="color: var(--color-gray); font-size: var(--font-size-lg); line-height: 1.8;">
+                    Постоянное улучшение оборудования и выход на новый уровень благодаря постоянному
+                    сотрудничеству со
+                    своими клиентами.
+                    Мы являемся официальным представителем корейской компании GAIA Corp. по
+                    производству оборудования
+                    для переработки
+                    органических отходов по технологии GAIA сушки.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <p class="section-subtitle">Ответы на популярные вопросы</p>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- FAQ 1 -->
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>По каким техническим параметрам происходит подбор необходимой модели
+                            оборудования?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Подбор модели оборудования осуществляется на основе нескольких ключевых
+                            параметров: объем
+                            ежедневных отходов,
+                            тип перерабатываемого сырья (пищевые, органические, биологические
+                            отходы), доступные
+                            источники энергии
+                            (электричество или газ), а также особенности помещения и требования к
+                            производительности.
+                            Наши специалисты
+                            проведут детальный анализ ваших потребностей и предложат оптимальное
+                            решение.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Что происходит с образующимся насыщенным водяным паром?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            В процессе переработки органических отходов образуется водяной пар,
+                            который проходит через
+                            систему фильтрации
+                            и очистки. Очищенный пар безопасно выводится в атмосферу, соответствуя
+                            всем экологическим
+                            нормам и требованиям
+                            СанПиН. Система полностью герметична и исключает распространение
+                            неприятных запахов.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Соответствует ли оборудование требованиям СанПиНа?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Да, все оборудование GAIA полностью соответствует требованиям СанПиН и
+                            имеет все необходимые
+                            сертификаты
+                            для использования на территории Российской Федерации. Технология
+                            обеспечивает стерилизацию
+                            отходов при
+                            высокой температуре, что гарантирует безопасность конечного продукта.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Можно ли перерабатывать сырье с повышенной бактериальной
+                            обсемененностью?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Да, технология GAIA позволяет перерабатывать сырье с высоким числом
+                            КМАФАнМ. Процесс сушки и
+                            стерилизации
+                            при высокой температуре обеспечивает полное уничтожение патогенных
+                            микроорганизмов. Это
+                            делает оборудование
+                            идеальным для переработки биологических отходов, включая мясные, рыбные
+                            и молочные продукты.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GAIA-RU</h3>
+                    <p>Профессиональные решения для утилизации отходов.</p>
+                    <div class="header-socials" style="margin-top: 15px;">
+                        <a href="https://vk.com/gaiaru" target="_blank"><i class="fab fa-vk"></i></a>
+                        <a href="https://youtube.com/@gaiaru" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Связь</h3>
+                    <p>
+                        <i class="fas fa-envelope"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <span>Санкт-Петербург, Приморский пр-т, д.50, лит. Б</span>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <p><a href="index.html">Главная</a></p>
+                    <p><a href="catalog.html">Каталог</a></p>
+                    <p><a href="technology.html">О технологии</a></p>
+                    <p><a href="team.html">Команда</a></p>
+                    <p><a href="about.html">О компании</a></p>
+                    <p><a href="contacts.html">Контакты</a></p>
+                    <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
+                            style="color: var(--color-primary); font-weight: 600;">Личный
+                            кабинет</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> GAIA-RU. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+    <script>
+        // FAQ Toggle Function
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>

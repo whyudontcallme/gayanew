@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Технология GAIA - профессиональное решение для локальной утилизации органических отходов">
+    <title>О технологии - GAIA-RU</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .process-step {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, rgba(39, 174, 96, 0.05) 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+        }
+
+        .video-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .video-link {
+            background: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .video-link:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-link i {
+            font-size: var(--font-size-2xl);
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </div>
+                    <div class="working-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 09:00 - 18:00</span>
+                    </div>
+                </div>
+                <div class="header-socials">
+                    <a href="https://vk.com/gaiaru" target="_blank" title="Мы в VK"><i class="fab fa-vk"></i></a>
+                    <a href="https://youtube.com/@gaiaru" target="_blank" title="Наш YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">GAIA-RU</a>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="technology.html" class="nav-link active">О технологии</a>
+                    <a href="team.html" class="nav-link">Команда</a>
+                    <a href="about.html" class="nav-link">О компании</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="padding-top: var(--spacing-xl);">
+        <div class="container">
+            <p class="section-subtitle">GAIA - новая технология</p>
+            <h1 class="section-title">ПРОФЕССИОНАЛЬНОЕ решение для локальной утилизации пищевых, органических и
+                биологических отходов</h1>
+            <p class="text-center"
+                style="max-width: 900px; margin: 0 auto var(--spacing-lg); color: var(--color-gray); font-size: var(--font-size-lg);">
+                Наша уникальная технология переработки органики — это совершенно другой взгляд на отходы, стремление к
+                экологичности, бережное отношение к природным ресурсам и их экономия, снижение расходов и возможность
+                планирования производства в соответствии с изменениями законодательства РФ и внедрением расширенной
+                ответственности производителя
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Message -->
+    <section class="section bg-dark">
+        <div class="container text-center">
+            <h2 style="color: white; font-size: var(--font-size-2xl); margin-bottom: var(--spacing-md);">
+                А что если мы вам сообщим, что технология GAIA обеспечивает утилизацию органических и биологических
+                отходов по цене менее 1 руб/кг?
+            </h2>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" id="process">
+        <div class="container">
+            <h2 class="section-title">Процесс переработки</h2>
+            <p class="section-subtitle">Технология одной кнопки</p>
+            <p class="text-center"
+                style="max-width: 800px; margin: 0 auto var(--spacing-lg); color: var(--color-gray);">
+                Простота использования оборудования GAIA - это один из аргументов надежности технологии, а также
+                простоты ее внедрения внутри компании
+            </p>
+
+            <div class="grid grid-3">
+                <div class="process-step reveal">
+                    <div class="process-number">1</div>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Загрузка</h3>
+                    <p style="color: var(--color-gray);">
+                        Исходное сырье помещается в герметичную камеру. Технология позволяет перерабатывать жидкие и
+                        твердые отходы
+                    </p>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-number">2</div>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Переработка</h3>
+                    <p style="color: var(--color-gray);">
+                        Продукт измельчается, высушивается и стерилизуется. Процесс переработки автономен и не требует
+                        участия персонала
+                    </p>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-number">3</div>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Выгрузка</h3>
+                    <p style="color: var(--color-gray);">
+                        Выгрузка происходит в автоматическом режиме. При влажности 10% автоматика остужает сырье и
+                        производит выгрузку
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section bg-light" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Преимущества технологии</h2>
+
+            <div class="grid grid-3">
+                <div class="benefit-card reveal">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                        <i class="fas fa-weight"></i> От 20 кг до 200 тонн ежедневно
+                    </h3>
+                    <p style="color: var(--color-gray);">
+                        Индивидуально для каждого предприятия мы подберем соответствующую модель оборудования с учетом
+                        характеристик, морфологии сырья, наиболее выгодных источников энергии
+                    </p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                        <i class="fas fa-ruble-sign"></i> Уменьшайте расходы на утилизацию
+                    </h3>
+                    <p style="color: var(--color-gray);">
+                        Оборудование "GAIA" позволит вместо складирования отходов получать доход от конечного продукта
+                        реализуя товарную фракцию
+                    </p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                        <i class="fas fa-recycle"></i> Модель циркуляционной экономики
+                    </h3>
+                    <p style="color: var(--color-gray);">
+                        С помощью технологии GAIA возможно повторное использование существующих материалов и продуктов
+                        на протяжении долгого времени
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Links Section -->
+    <section class="section bg-dark">
+        <div class="container">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>GAIA-RU</h3>
+                        <p>Профессиональные решения для утилизации отходов.</p>
+                        <div class="header-socials" style="margin-top: 15px;">
+                            <a href="https://vk.com/gaiaru" target="_blank"><i class="fab fa-vk"></i></a>
+                            <a href="https://youtube.com/@gaiaru" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Связь</h3>
+                        <p>
+                            <i class="fas fa-envelope"
+                                style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                            <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"
+                                style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                            <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"
+                                style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                            <span>Санкт-Петербург, Приморский пр-т, д.50, лит. Б</span>
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Навигация</h3>
+                        <p><a href="index.html">Главная</a></p>
+                        <p><a href="catalog.html">Каталог</a></p>
+                        <p><a href="technology.html">О технологии</a></p>
+                        <p><a href="team.html">Команда</a></p>
+                        <p><a href="about.html">О компании</a></p>
+                        <p><a href="contacts.html">Контакты</a></p>
+                        <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
+                                style="color: var(--color-primary); font-weight: 600;">Личный кабинет</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year">2025</span> GAIA-RU. Все права защищены.</p>
+                </div>
+            </div>
+            </footer>
+
+            <!-- Scripts -->
+            <script src="js/main.js"></script>
+            <script src="js/animations.js"></script>
+</body>
+
+</html>

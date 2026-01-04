@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог оборудования GAIA для переработки органических отходов">
+    <title>Каталог - GAIA-RU</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .product-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            font-size: 4rem;
+            color: var(--color-primary);
+        }
+
+        .product-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-capacity {
+            font-size: var(--font-size-lg);
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .product-dimensions {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .product-note {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray);
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .category-header {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .product-actions .btn {
+            flex: 1;
+            padding: 10px 5px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </div>
+                    <div class="working-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 09:00 - 18:00</span>
+                    </div>
+                </div>
+                <div class="header-socials">
+                    <a href="https://vk.com/gaiaru" target="_blank" title="Мы в VK"><i class="fab fa-vk"></i></a>
+                    <a href="https://youtube.com/@gaiaru" target="_blank" title="Наш YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">GAIA-RU</a>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link active">Каталог</a>
+                    <a href="technology.html" class="nav-link">О технологии</a>
+                    <a href="team.html" class="nav-link">Команда</a>
+                    <a href="about.html" class="nav-link">О компании</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Electric Models -->
+    <section class="section">
+        <div class="container">
+            <div class="category-header reveal">
+                <h4>Электрические УСТАНОВКИ</h4>
+                <p style="color: white;">Мобильное оборудование для любого помещения</p>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- GC-50 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="product-title">GC-50</h3>
+                    <p class="product-capacity">50 кг/сут</p>
+                    <p class="product-dimensions">1200x880x1190</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-100 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="product-title">GC-100</h3>
+                    <p class="product-capacity">100 кг/сут</p>
+                    <p class="product-dimensions">1440x990x1282</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-150 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="product-title">GC-150</h3>
+                    <p class="product-capacity">150 кг/сут</p>
+                    <p class="product-dimensions">1600x1030x1490</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-200 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="product-title">GC-200</h3>
+                    <p class="product-capacity">200 кг/сут</p>
+                    <p class="product-dimensions">1800x1100x1550</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-300 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3 class="product-title">GC-300</h3>
+                    <p class="product-capacity">300 кг/сут</p>
+                    <p class="product-note">Переработка мясной рыбной молочной продукции</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-400 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="product-title">GC-400</h3>
+                    <p class="product-capacity">400 кг/сут</p>
+                    <p class="product-dimensions">2100x1300x1700</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-600 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="product-title">GC-600</h3>
+                    <p class="product-capacity">600 кг/сут</p>
+                    <p class="product-dimensions">2400x1500x1900</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-1000 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="product-title">GC-1000</h3>
+                    <p class="product-capacity">1000 кг/сут</p>
+                    <p class="product-dimensions">2800x1800x2200</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-1200 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="product-title">GC-1200</h3>
+                    <p class="product-capacity">1200 кг/сут</p>
+                    <p class="product-dimensions">3000x2000x2400</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-2000 -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="product-title">GC-2000</h3>
+                    <p class="product-capacity">2000 кг/сут</p>
+                    <p class="product-dimensions">3500x2500x2800</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gas Models -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="category-header reveal">
+                <h4>Газовые УСТАНОВКИ</h4>
+                <p style="color: white;">Эффективное повторное использование ресурсов в одной установке</p>
+            </div>
+
+            <div class="grid grid-2">
+                <!-- GC-5T -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="product-title">GC-5T</h3>
+                    <p class="product-capacity">5 тонн/сут</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+
+                <!-- GC-100T -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="product-title">GC-100T</h3>
+                    <p class="product-capacity">100 тонн/сут</p>
+                    <div class="product-actions">
+                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GAIA-RU</h3>
+                    <p>Профессиональные решения для утилизации отходов.</p>
+                    <div class="header-socials" style="margin-top: 15px;">
+                        <a href="https://vk.com/gaiaru" target="_blank"><i class="fab fa-vk"></i></a>
+                        <a href="https://youtube.com/@gaiaru" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Связь</h3>
+                    <p>
+                        <i class="fas fa-envelope"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <span>Санкт-Петербург, Приморский пр-т, д.50, лит. Б</span>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <p><a href="index.html">Главная</a></p>
+                    <p><a href="catalog.html">Каталог</a></p>
+                    <p><a href="technology.html">О технологии</a></p>
+                    <p><a href="team.html">Команда</a></p>
+                    <p><a href="about.html">О компании</a></p>
+                    <p><a href="contacts.html">Контакты</a></p>
+                    <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
+                            style="color: var(--color-primary); font-weight: 600;">Личный кабинет</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> GAIA-RU. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

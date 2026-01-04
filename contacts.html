@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Свяжитесь с GAIA-RU - официальным представителем GAIA Corp в России.">
+    <title>Контакты - GAIA-RU</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .contact-form-container {
+            background: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--color-gray-light);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+            transition: var(--transition-base);
+        }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+            outline: none;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-card i {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-top: 5px;
+        }
+
+        .contact-card h4 {
+            margin-bottom: 5px;
+            color: var(--color-dark);
+        }
+
+        .contact-card p,
+        .contact-card a {
+            color: var(--color-gray);
+            font-size: var(--font-size-lg);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </div>
+                    <div class="working-hours">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 09:00 - 18:00</span>
+                    </div>
+                </div>
+                <div class="header-socials">
+                    <a href="https://vk.com/gaiaru" target="_blank" title="Мы в VK"><i class="fab fa-vk"></i></a>
+                    <a href="https://youtube.com/@gaiaru" target="_blank" title="Наш YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">GAIA-RU</a>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link">Каталог</a>
+                    <a href="technology.html" class="nav-link">О технологии</a>
+                    <a href="team.html" class="nav-link">Команда</a>
+                    <a href="about.html" class="nav-link">О компании</a>
+                    <a href="contacts.html" class="nav-link active">Контакты</a>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="padding-top: var(--spacing-xl); background: var(--color-light);">
+        <div class="container">
+            <p class="section-subtitle">Свяжитесь с нами</p>
+            <h1 class="section-title">Контакты</h1>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Адрес офиса</h4>
+                            <p>197374, Санкт-Петербург, Приморский пр-т, д.50, лит. Б, пом. 1-Н</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Время работы</h4>
+                            <p>Понедельник — Пятница: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <h4>Мы в соцсетях</h4>
+                        <div class="header-socials" style="margin-top: 15px;">
+                            <a href="https://vk.com/gaiaru" target="_blank"
+                                style="color: var(--color-dark); font-size: 2rem; margin-right: 20px;"><i
+                                    class="fab fa-vk"></i></a>
+                            <a href="https://youtube.com/@gaiaru" target="_blank"
+                                style="color: var(--color-dark); font-size: 2rem;"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Form -->
+                <div class="contact-form-container reveal">
+                    <h3 style="margin-bottom: var(--spacing-md);">Напишите нам</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Иван Иванов"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="example@mail.ru" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" class="form-control"
+                                placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" class="form-control" rows="4"
+                                placeholder="Ваш вопрос..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Отправить
+                            заявку</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container reveal">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?ll=30.252431%2C59.984439&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzEwNDMwMhJR0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0J_RgNC40LzQvtGA0YHQutC40Lkg0L_RgNC-0YHQv9C10LrRgiwgNTAiCg396_pBFYp-X0I%2C&z=16.6"
+                    width="100%" height="450" frameborder="0" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GAIA-RU</h3>
+                    <p>Профессиональные решения для утилизации отходов.</p>
+                    <div class="header-socials" style="margin-top: 15px;">
+                        <a href="https://vk.com/gaiaru" target="_blank"><i class="fab fa-vk"></i></a>
+                        <a href="https://youtube.com/@gaiaru" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Связь</h3>
+                    <p>
+                        <i class="fas fa-envelope"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <span>Санкт-Петербург, Приморский пр-т, д.50, лит. Б</span>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <p><a href="index.html">Главная</a></p>
+                    <p><a href="catalog.html">Каталог</a></p>
+                    <p><a href="technology.html">О технологии</a></p>
+                    <p><a href="team.html">Команда</a></p>
+                    <p><a href="about.html">О компании</a></p>
+                    <p><a href="contacts.html">Контакты</a></p>
+                    <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
+                            style="color: var(--color-primary); font-weight: 600;">Личный кабинет</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> GAIA-RU. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>
