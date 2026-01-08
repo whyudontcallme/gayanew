@@ -1,103 +1,89 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="О компании ГАЯ-РУ - официальный представитель корейской компании ГАЯ Corp.">
-    <title>О компании - ГАЯ-РУ</title>
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    .faq-item {
+        background: var(--color-white);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-base);
+    }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    .faq-item:hover {
+        box-shadow: var(--shadow-md);
+    }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    .faq-question {
+        padding: var(--spacing-md);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--color-white);
+        border: none;
+        width: 100%;
+        text-align: left;
+        font-size: var(--font-size-lg);
+        font-weight: 600;
+        color: var(--color-dark);
+        transition: var(--transition-base);
+    }
 
-    <style>
-        .faq-item {
-            background: var(--color-white);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--spacing-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-base);
-        }
+    .faq-question:hover {
+        background: var(--color-gray-light);
+    }
 
-        .faq-item:hover {
-            box-shadow: var(--shadow-md);
-        }
+    .faq-question i {
+        color: var(--color-primary);
+        transition: var(--transition-base);
+    }
 
-        .faq-question {
-            padding: var(--spacing-md);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--color-white);
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--color-dark);
-            transition: var(--transition-base);
-        }
+    .faq-question.active i {
+        transform: rotate(180deg);
+    }
 
-        .faq-question:hover {
-            background: var(--color-gray-light);
-        }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 var(--spacing-md);
+    }
 
-        .faq-question i {
-            color: var(--color-primary);
-            transition: var(--transition-base);
-        }
+    .faq-answer.active {
+        max-height: 500px;
+        padding: var(--spacing-md);
+    }
 
-        .faq-question.active i {
-            transform: rotate(180deg);
-        }
+    .faq-answer p {
+        color: var(--color-gray);
+        line-height: 1.8;
+    }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 var(--spacing-md);
-        }
+    .stats-card {
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+        color: var(--color-white);
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-lg);
+        text-align: center;
+    }
 
-        .faq-answer.active {
-            max-height: 500px;
-            padding: var(--spacing-md);
-        }
+    .stats-number {
+        font-size: var(--font-size-4xl);
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+    }
 
-        .faq-answer p {
-            color: var(--color-gray);
-            line-height: 1.8;
-        }
-
-        .stats-card {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            color: var(--color-white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            text-align: center;
-        }
-
-        .stats-number {
-            font-size: var(--font-size-4xl);
-            font-weight: 700;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .stats-label {
-            font-size: var(--font-size-lg);
-            opacity: 0.9;
-        }
-    </style>
+    .stats-label {
+        font-size: var(--font-size-lg);
+        opacity: 0.9;
+    }
+</style>
 </head>
 
 <body>
@@ -142,7 +128,7 @@
         <div class="header-main">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html">ГАЯ-РУ</a>
+                    <a href="index.html">ГАЙЯ-РУ</a>
                 </div>
 
                 <nav class="nav-menu">
@@ -166,7 +152,7 @@
     <section class="section" style="padding-top: var(--spacing-xl);">
         <div class="container">
             <p class="section-subtitle">О компании</p>
-            <h1 class="section-title">ГАЯ-РУ - официальный представитель</h1>
+            <h1 class="section-title">ГАЙЯ-РУ - официальный представитель</h1>
         </div>
     </section>
 
@@ -203,10 +189,10 @@
                     Постоянное улучшение оборудования и выход на новый уровень благодаря постоянному
                     сотрудничеству со
                     своими клиентами.
-                    Мы являемся официальным представителем корейской компании ГАЯ Corp. по
+                    Мы являемся официальным представителем корейской компании ГАЙЯ Corp. по
                     производству оборудования
                     для переработки
-                    органических отходов по технологии ГАЯ сушки.
+                    органических отходов по технологии ГАЙЯ сушки.
                 </p>
             </div>
         </div>
@@ -271,7 +257,7 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            Да, все оборудование ГАЯ полностью соответствует требованиям СанПиН и
+                            Да, все оборудование ГАЙЯ полностью соответствует требованиям СанПиН и
                             имеет все необходимые
                             сертификаты
                             для использования на территории Российской Федерации. Технология
@@ -291,7 +277,7 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            Да, технология ГАЯ позволяет перерабатывать сырье с высоким числом
+                            Да, технология ГАЙЯ позволяет перерабатывать сырье с высоким числом
                             КМАФАнМ. Процесс сушки и
                             стерилизации
                             при высокой температуре обеспечивает полное уничтожение патогенных
@@ -311,7 +297,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>ГАЯ-РУ</h3>
+                    <h3>ГАЙЯ-РУ</h3>
                     <p>Профессиональные решения для утилизации отходов.</p>
                     <div class="header-socials" style="margin-top: 15px;">
                         <a href="https://vk.com/gaiaru" target="_blank"><i class="fab fa-vk"></i></a>
@@ -353,7 +339,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2025</span> ГАЯ-РУ. Все права защищены.</p>
+                <p>&copy; <span id="current-year">2025</span> ГАЙЯ-РУ. Все права защищены.</p>
             </div>
         </div>
     </footer>
