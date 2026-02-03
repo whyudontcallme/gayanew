@@ -265,17 +265,25 @@
     }
 
     @media (max-width: 768px) {
-      .partner-cards {
-        flex-direction: column;
-      }
-
-      .partner-card {
-        width: 100%;
-        min-height: auto;
-      }
-
       #calculator-container {
         padding: 1.5rem;
+        margin: 1.5rem auto;
+      }
+
+      .user-data-prompt {
+        font-size: 22px;
+        margin: 1.5rem 0;
+      }
+
+      .tab-group {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 8px;
+      }
+
+      .tab {
+        width: 100%;
+        padding: 12px;
       }
 
       .form-row {
@@ -284,10 +292,39 @@
 
       .unit-select {
         width: 100%;
+        margin-top: 8px;
       }
 
-      .tab-group {
-        max-width: 100%;
+      .partner-cards {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 2rem;
+      }
+
+      .partner-card {
+        width: 100%;
+        min-height: auto;
+        padding: 1.5rem;
+      }
+
+      .partner-card img {
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .user-data-prompt {
+        font-size: 18px;
+      }
+
+      #calculate-btn {
+        font-size: 16px;
+        padding: 15px;
+      }
+
+      #example-section {
+        font-size: 14px;
+        padding: 15px;
       }
     }
   </style>
@@ -323,7 +360,7 @@
             <span>Пн-Пт: 09:00 - 18:00</span>
           </div>
         </div>
-        
+
       </div>
     </div>
 
@@ -554,7 +591,7 @@
         <div class="footer-section">
           <h3>ГАЙЯ-РУ</h3>
           <p>Профессиональные решения для утилизации отходов.</p>
-          
+
         </div>
 
         <div class="footer-section">
