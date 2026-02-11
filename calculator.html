@@ -335,6 +335,20 @@
   <div class="cursor-dot"></div>
   <div class="cursor-outline"></div>
 
+  <!-- Callback Popup -->
+  <div class="callback-popup" id="callbackPopup">
+    <button class="popup-close" onclick="closePopup()">&times;</button>
+    <div class="popup-avatar">👨‍💼</div>
+    <div class="popup-content">
+      <h3>Добрый день!</h3>
+      <p>Меня зовут <strong>Александр</strong>, с удовольствием вам перезвоним! Оставьте вашу заявку через форму
+        обратной связи ниже.</p>
+      <button class="btn btn-primary btn-block" onclick="scrollToForm()" style="width: 100%;">
+        <i class="fas fa-phone"></i> Заказать звонок
+      </button>
+    </div>
+  </div>
+
   <!-- Back to Top Button -->
   <a href="#" class="back-to-top">
     <i class="fas fa-chevron-up"></i>
@@ -513,6 +527,23 @@
       }
 
       if (unit === 't') amount *= 1000;
+
+      // Restriction: Gas models only available for 1000kg+ per day
+      if (activeTab === 'gas' && amount < 1000) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+          <div style="text-align: center; padding: var(--spacing-lg); background: #fff3cd; border: 2px solid #ffc107; border-radius: var(--radius-md);">
+            <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #ff9800; margin-bottom: var(--spacing-sm);"></i>
+            <h3 style="color: #ff6f00; margin-bottom: var(--spacing-sm);">Газовые установки недоступны</h3>
+            <p style="color: #666; margin-bottom: 0;">
+              Газовые модели доступны только для объемов от <strong>1000 кг (1 тонна) отходов в сутки</strong>.<br>
+              Пожалуйста, выберите электрическую модель или увеличьте объем отходов.
+            </p>
+          </div>
+        `;
+        resultDiv.style.display = 'block';
+        return;
+      }
 
       let dataRow, energyName, energyUnit;
       if (activeTab === 'electric') {

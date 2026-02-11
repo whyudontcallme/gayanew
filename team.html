@@ -89,6 +89,20 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
+    <!-- Callback Popup -->
+    <div class="callback-popup" id="callbackPopup">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <div class="popup-avatar">👨‍💼</div>
+        <div class="popup-content">
+            <h3>Добрый день!</h3>
+            <p>Меня зовут <strong>Александр</strong>, с удовольствием вам перезвоним! Оставьте вашу заявку через форму
+                обратной связи ниже.</p>
+            <button class="btn btn-primary btn-block" onclick="scrollToForm()" style="width: 100%;">
+                <i class="fas fa-phone"></i> Заказать звонок
+            </button>
+        </div>
+    </div>
+
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top">
         <i class="fas fa-chevron-up"></i>
@@ -160,20 +174,19 @@
                 <!-- Йоанна Довкович -->
                 <div class="team-card reveal">
                     <div class="team-avatar">
-                        <img src="images/team/yoanna.png" alt="Йоанна Довкович">
+                        <img src="images/team/yoanna.jpeg" alt="Йоанна Довкович">
                     </div>
                     <h3 class="team-name">Йоанна<br>Довкович</h3>
-                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Менеджер по внутренним делам</p>
+                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Генеральный директор</p>
                 </div>
 
                 <!-- Александр Андреев -->
                 <div class="team-card reveal">
                     <div class="team-avatar">
-                        <img src="images/team/aleksandr.png" alt="Александр Андреев">
+                        <img src="images/team/aleksandr.jpeg" alt="Александр Андреев">
                     </div>
                     <h3 class="team-name">Александр<br>Андреев</h3>
-                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Менеджер по внешним коммуникациям и
-                        продажам</p>
+                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Управляющий директор</p>
                 </div>
 
 
@@ -181,10 +194,10 @@
                 <!-- Алина Паллина -->
                 <div class="team-card reveal">
                     <div class="team-avatar">
-                        <img src="images/team/alina.png" alt="Алина Паллина">
+                        <img src="images/team/alina.jpeg" alt="Алина Паллина">
                     </div>
                     <h3 class="team-name">Алина<br>Паллина</h3>
-                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);"></p>
+                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Менеджер по внутренним делам</p>
                 </div>
 
                 <!-- Александр Аракельянц -->
@@ -193,7 +206,29 @@
                         <img src="images/team/arakelants.png" alt="Александр Аракельянц">
                     </div>
                     <h3 class="team-name">Александр<br>Аракельянц</h3>
-                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);"></p>
+                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Менеджер по коммуникациям и продажам
+                    </p>
+                </div>
+
+                <!-- AI Specialist - Software Specialist -->
+                <div class="team-card reveal">
+                    <div class="team-avatar">
+                        <img src="images/team/ai_specialist.png" alt="Специалист AI"
+                            onerror="this.src='https://ui-avatars.com/api/?name=AI+Spec&background=2ecc71&color=fff&size=150'">
+                    </div>
+                    <h3 class="team-name">Мусо</h3>
+                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Специалист по программному
+                        обеспечению</p>
+                </div>
+
+                <!-- Сергей Мыстров - Key Projects Manager -->
+                <div class="team-card reveal">
+                    <div class="team-avatar">
+                        <img src="images/team/sergey.jpeg" alt="Сергей Мыстров">
+                    </div>
+                    <h3 class="team-name">Сергей<br>Мыстров</h3>
+                    <p class="text-muted" style="margin-bottom: var(--spacing-xs);">Менеджер ключевых проектов
+                        Приволжского Ф/О</p>
                 </div>
             </div>
         </div>
@@ -242,7 +277,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2025</span> ГАЙЯ-РУ. Все права защищены.</p>
+                <p>&copy; <span id="current-year">2026</span> ГАЙЯ-РУ. Все права защищены.</p>
             </div>
         </div>
     </footer>

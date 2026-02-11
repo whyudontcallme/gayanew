@@ -224,5 +224,54 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
     console.log('GAIA Website initialized successfully!');
+});
+
+// ========================================
+// Callback Popup Logic (Global)
+// ========================================
+
+function showPopup() {
+    const popup = document.getElementById('callbackPopup');
+    if (popup) {
+        popup.classList.add('show');
+    }
+}
+
+function closePopup() {
+    const popup = document.getElementById('callbackPopup');
+    if (popup) {
+        popup.classList.remove('show');
+        localStorage.setItem('popupClosed', 'true');
+    }
+}
+
+function scrollToForm() {
+    closePopup();
+    const form = document.querySelector('.contact-form-container');
+    if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+        // Redirect to contacts page if not already there
+        window.location.href = 'contacts.html?scroll=true';
+    }
+}
+
+// Show popup after 1 second if not previously closed
+window.addEventListener('load', function () {
+    const popupClosed = localStorage.getItem('popupClosed');
+    if (!popupClosed) {
+        setTimeout(showPopup, 1000);
+    }
+
+    // Handle scroll redirect from other pages
+    if (window.location.search.includes('scroll=true')) {
+        setTimeout(() => {
+            const form = document.querySelector('.contact-form-container');
+            if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 500);
+    }
 });
