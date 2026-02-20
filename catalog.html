@@ -20,19 +20,94 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <style>
+        /* Catalog Layout */
+        .catalog-layout-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 300px;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            align-items: start;
+        }
+
+        .catalog-col-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(46, 204, 113, 0.3);
+        }
+
+        .catalog-col-header h2 {
+            color: white;
+            margin: 0;
+            font-size: var(--font-size-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+        }
+
+        .catalog-col-products {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        /* Customization Sidebar */
+        .catalog-sidebar {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-md);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            position: sticky;
+            top: 80px;
+        }
+
+        .catalog-sidebar h3 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid rgba(46, 204, 113, 0.2);
+        }
+
         /* Filters Panel */
         .filters-panel {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: var(--radius-xl);
             padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(46, 204, 113, 0.2);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: var(--spacing-lg);
         }
+
+        @media (max-width: 1024px) {
+            .catalog-layout-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .catalog-sidebar {
+                grid-column: 1 / -1;
+                position: static;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .catalog-layout-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
 
         .filter-group {
             display: flex;
@@ -978,847 +1053,867 @@
                 <p class="section-subtitle">Эффективные решения для любых задач</p>
             </div>
 
-            <!-- Filters Panel -->
-            <div class="filters-panel">
-                <div class="filter-group">
-                    <label><i class="fas fa-filter"></i> Тип энергии:</label>
-                    <div class="filter-buttons">
-                        <button class="filter-btn active" data-filter="all">Все модели</button>
-                        <button class="filter-btn" data-filter="electric"><i class="fas fa-plug"></i>
-                            Электрические</button>
-                        <button class="filter-btn" data-filter="gas"><i class="fas fa-fire"></i> Газовые</button>
+            <!-- 3-Column Catalog Layout -->
+            <div class="catalog-layout-wrapper">
+
+                <!-- Column 1: Electric Models -->
+                <div>
+                    <div class="catalog-col-header">
+                        <h2><i class="fas fa-plug"></i> Электрическое оборудование</h2>
+                    </div>
+                    <div class="catalog-col-products">
+                        <div class="product-card reveal" data-energy="electric" data-capacity="50" data-name="GC-50"
+                            data-dimensions="1.2 x 0.8 x 1.5 м" data-power="3 кВт" data-noise="45 дБ">
+                            <span class="badge badge-eco">Компактная</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc50-electric">
+                            <label class="compare-label" for="compare-gc50-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-50.png" alt="Установка ГАЙЯ GC-50">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-50</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 50 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>1.2 x 0.8 x 1.5 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>3 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>45 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Минимальное энергопотребление</li>
+                                    <li><i class="fas fa-check-circle"></i> Компактный размер</li>
+                                    <li><i class="fas fa-check-circle"></i> Простая установка</li>
+                                    <li><i class="fas fa-check-circle"></i> Идеально для малого бизнеса</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-coffee"></i> Кафе</span>
+                                <span class="app-tag"><i class="fas fa-store"></i> Магазины</span>
+                                <span class="app-tag"><i class="fas fa-home"></i> Офисы</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-100 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="100" data-name="GC-100"
+                            data-dimensions="1.5 x 1.0 x 1.7 м" data-power="5 кВт" data-noise="47 дБ">
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc100-electric">
+                            <label class="compare-label" for="compare-gc100-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-100.png" alt="Установка ГАЙЯ GC-100">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-100</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 100 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>1.5 x 1.0 x 1.7 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>5 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>47 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Оптимальная производительность</li>
+                                    <li><i class="fas fa-check-circle"></i> Энергоэффективность</li>
+                                    <li><i class="fas fa-check-circle"></i> Низкий уровень шума</li>
+                                    <li><i class="fas fa-check-circle"></i> Надежная конструкция</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-coffee"></i> Кафе</span>
+                                <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-150 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="150" data-name="GC-150"
+                            data-dimensions="1.7 x 1.1 x 1.8 м" data-power="7 кВт" data-noise="49 дБ">
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc150-electric">
+                            <label class="compare-label" for="compare-gc150-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-150.png" alt="Установка ГАЙЯ GC-150">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-150</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 150 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>1.7 x 1.1 x 1.8 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>7 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>49 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Повышенная производительность</li>
+                                    <li><i class="fas fa-check-circle"></i> Автоматизированный процесс</li>
+                                    <li><i class="fas fa-check-circle"></i> Простое обслуживание</li>
+                                    <li><i class="fas fa-check-circle"></i> Долговечность</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-hospital"></i> Столовые</span>
+                                <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-200 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="200" data-name="GC-200"
+                            data-dimensions="1.9 x 1.2 x 1.9 м" data-power="9 кВт" data-noise="50 дБ">
+                            <span class="badge badge-popular">Популярное</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc200-electric">
+                            <label class="compare-label" for="compare-gc200-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-200.png" alt="Установка ГАЙЯ GC-200">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-200</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 200 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>1.9 x 1.2 x 1.9 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>9 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>50 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Высокая эффективность</li>
+                                    <li><i class="fas fa-check-circle"></i> Умная система управления</li>
+                                    <li><i class="fas fa-check-circle"></i> Экономия ресурсов</li>
+                                    <li><i class="fas fa-check-circle"></i> Надежность работы</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
+                                <span class="app-tag"><i class="fas fa-school"></i> Школы</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-300 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="300" data-name="GC-300"
+                            data-dimensions="2.1 x 1.3 x 2.0 м" data-power="11 кВт" data-noise="52 дБ">
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc300-electric">
+                            <label class="compare-label" for="compare-gc300-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-300.png" alt="Установка ГАЙЯ GC-300">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-300</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 300 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>2.1 x 1.3 x 2.0 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>11 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>52 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Средняя производительность</li>
+                                    <li><i class="fas fa-check-circle"></i> Автоматический контроль</li>
+                                    <li><i class="fas fa-check-circle"></i> Минимальное обслуживание</li>
+                                    <li><i class="fas fa-check-circle"></i> Энергосбережение</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
+                                <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-400 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="400" data-name="GC-400"
+                            data-dimensions="2.3 x 1.4 x 2.0 м" data-power="13 кВт" data-noise="53 дБ">
+                            <span class="badge badge-recommended">Рекомендуем</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc400-electric">
+                            <label class="compare-label" for="compare-gc400-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-400.png" alt="Установка ГАЙЯ GC-400">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-400</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 400 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>2.3 x 1.4 x 2.0 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>13 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>53 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Оптимальная мощность</li>
+                                    <li><i class="fas fa-check-circle"></i> Интеллектуальное управление</li>
+                                    <li><i class="fas fa-check-circle"></i> Удаленный мониторинг</li>
+                                    <li><i class="fas fa-check-circle"></i> Расширенная гарантия</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
+                                <span class="app-tag"><i class="fas fa-school"></i> Школы</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-600 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="600" data-name="GC-600"
+                            data-dimensions="2.4 x 1.5 x 2.0 м" data-power="14 кВт" data-noise="54 дБ">
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc600-electric">
+                            <label class="compare-label" for="compare-gc600-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-600.png" alt="Установка ГАЙЯ GC-600">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-600</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 600 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>2.4 x 1.5 x 2.0 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>14 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>54 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Высокая производительность</li>
+                                    <li><i class="fas fa-check-circle"></i> Надежная работа</li>
+                                    <li><i class="fas fa-check-circle"></i> Низкие эксплуатационные расходы</li>
+                                    <li><i class="fas fa-check-circle"></i> Профессиональная поддержка</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
+                                <span class="app-tag"><i class="fas fa-shopping-cart"></i> ТЦ</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-1000 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="1000" data-name="GC-1000"
+                            data-dimensions="2.5 x 1.5 x 2.0 м" data-power="15 кВт" data-noise="55 дБ">
+                            <span class="badge badge-popular">Популярное</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc1000-electric">
+                            <label class="compare-label" for="compare-gc1000-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-1000.png" alt="Установка ГАЙЯ GC-1000">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-1000</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 1000 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>2.5 x 1.5 x 2.0 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>15 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>55 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Энергоэффективность класса A</li>
+                                    <li><i class="fas fa-check-circle"></i> Автоматическая система контроля</li>
+                                    <li><i class="fas fa-check-circle"></i> Низкий уровень шума</li>
+                                    <li><i class="fas fa-check-circle"></i> Компактные размеры</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-coffee"></i> Кафе</span>
+                                <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-1200 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="1200" data-name="GC-1200"
+                            data-dimensions="2.8 x 1.6 x 2.1 м" data-power="18 кВт" data-noise="57 дБ">
+                            <span class="badge badge-recommended">Рекомендуем</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc1200-electric">
+                            <label class="compare-label" for="compare-gc1200-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-1200.png" alt="Установка ГАЙЯ GC-1200">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-1200</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 1200 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>2.8 x 1.6 x 2.1 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>18 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>57 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Высокая производительность</li>
+                                    <li><i class="fas fa-check-circle"></i> Интеллектуальное управление</li>
+                                    <li><i class="fas fa-check-circle"></i> Минимальное обслуживание</li>
+                                    <li><i class="fas fa-check-circle"></i> Удаленный мониторинг</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
+                                <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
+                                <span class="app-tag"><i class="fas fa-school"></i> Школы</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- GC-2000 Electric -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="2000" data-name="GC-2000"
+                            data-dimensions="3.2 x 1.8 x 2.3 м" data-power="25 кВт" data-noise="60 дБ">
+                            <span class="badge badge-industrial">Промышленная</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="gc2000-electric">
+                            <label class="compare-label" for="compare-gc2000-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-2000.png" alt="Установка ГАЙЯ GC-2000">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-2000</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> 2000 кг/сут</p>
+                            <p class="product-dimensions">Электрическая установка</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>3.2 x 1.8 x 2.3 м</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>25 кВт</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>60 дБ</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Максимальная производительность</li>
+                                    <li><i class="fas fa-check-circle"></i> Промышленная надежность</li>
+                                    <li><i class="fas fa-check-circle"></i> Расширенная гарантия</li>
+                                    <li><i class="fas fa-check-circle"></i> Круглосуточная поддержка</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
+                                <span class="app-tag"><i class="fas fa-shopping-cart"></i> ТЦ</span>
+                                <span class="app-tag"><i class="fas fa-building"></i> Комплексы</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
+
+                        <!-- Custom Electric 2-1000 Tons -->
+                        <div class="product-card reveal" data-energy="electric" data-capacity="1000000"
+                            data-name="2-1000 Тонн" data-dimensions="По запросу" data-power="По запросу"
+                            data-noise="По запросу">
+                            <span class="badge badge-industrial">Промышленная</span>
+                            <input type="checkbox" class="compare-checkbox" data-product-id="custom-electric">
+                            <label class="compare-label" for="compare-custom-electric">Сравнить</label>
+
+                            <div class="product-image">
+                                <img src="images/products/gc-100t.png" alt="Промышленная электрическая установка">
+                                <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                            </div>
+
+                            <h3 class="product-title">GC-3000H</h3>
+                            <p class="product-capacity"><i class="fas fa-bolt"></i> От 2 до 1000 тонн</p>
+                            <p class="product-dimensions">Электрическая промышленная линия</p>
+
+                            <div class="product-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>По запросу</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-plug"></i>
+                                    <span>По запросу</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-volume-down"></i>
+                                    <span>По запросу</span>
+                                </div>
+                            </div>
+
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Индивидуальное проектирование</li>
+                                    <li><i class="fas fa-check-circle"></i> Промышленная автоматизация</li>
+                                    <li><i class="fas fa-check-circle"></i> Полный цикл переработки</li>
+                                    <li><i class="fas fa-check-circle"></i> Шеф-монтаж и пусконаладка</li>
+                                </ul>
+                            </div>
+
+                            <div class="product-applications">
+                                <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
+                                <span class="app-tag"><i class="fas fa-city"></i> Города</span>
+                                <span class="app-tag"><i class="fas fa-recycle"></i> Полигоны ТБО</span>
+                            </div>
+
+                            <div class="product-actions">
+                                <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- End Column 1: Electric Models -->
 
-                <div class="filter-group">
-                    <label><i class="fas fa-sliders-h"></i> Производительность: <span id="capacity-value">2000</span>
-                        кг/сут</label>
-                    <input type="range" id="capacity-range" min="1000" max="2000" step="200" value="2000"
-                        class="capacity-slider">
-                    <div class="range-labels">
-                        <span>1000</span>
-                        <span>2000</span>
+                <!-- Column 2: Gas Models -->
+                <div>
+                    <div class="catalog-col-header">
+                        <h2><i class="fas fa-fire"></i> Газовое оборудование</h2>
+                    </div>
+                    <div class="catalog-col-products">
+
+                        <div class="model-banner gas-models-banner">
+                            <h3>Газовые установки ГАЙЯ</h3>
+                            <p>Промышленные газовые установки для переработки больших объемов органических отходов</p>
+                        </div>
+
+                        <div class="model-banner"
+                            style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(230, 126, 34, 0.1) 100%); border-color: rgba(231, 76, 60, 0.3);">
+                            <h3>От 2 до 1000 Тонн</h3>
+                            <p>Мощные промышленные установки для крупномасштабной переработки</p>
+                        </div>
+
+                        <div class="products-grid" style="margin-top: var(--spacing-lg);">
+                            <!-- GG-1000H Gas -->
+                            <div class="product-card reveal" data-energy="gas" data-capacity="1000" data-name="GG-1000H"
+                                data-dimensions="3.0 x 2.0 x 2.5 м" data-power="25 м³/ч" data-noise="55 дБ">
+                                <span class="badge badge-industrial">Промышленная</span>
+                                <input type="checkbox" class="compare-checkbox" data-product-id="gg1000h-gas">
+                                <label class="compare-label" for="compare-gg1000h-gas">Сравнить</label>
+
+                                <div class="product-image">
+                                    <img src="images/products/gc-1000.png" alt="Установка ГАЙЯ GG-1000H">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                                </div>
+
+                                <h3 class="product-title">GG-1000H</h3>
+                                <p class="product-capacity"><i class="fas fa-fire"></i> 1000 кг/сут</p>
+                                <p class="product-dimensions">Газовая промышленная установка</p>
+
+                                <div class="product-specs-grid">
+                                    <div class="spec-item">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span>3.0 x 2.0 x 2.5 м</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-fire"></i>
+                                        <span>25 м³/ч</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-volume-down"></i>
+                                        <span>55 дБ</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-features">
+                                    <ul>
+                                        <li><i class="fas fa-check-circle"></i> Высокая производительность</li>
+                                        <li><i class="fas fa-check-circle"></i> Промышленная надежность</li>
+                                        <li><i class="fas fa-check-circle"></i> Непрерывная работа</li>
+                                        <li><i class="fas fa-check-circle"></i> Техподдержка 24/7</li>
+                                    </ul>
+                                </div>
+
+                                <div class="product-applications">
+                                    <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
+                                    <span class="app-tag"><i class="fas fa-building"></i> Промышленные комплексы</span>
+                                    <span class="app-tag"><i class="fas fa-warehouse"></i> Крупные производства</span>
+                                </div>
+
+                                <div class="product-actions">
+                                    <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                    <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                                </div>
+                            </div>
+
+                            <!-- GG-1200H Gas -->
+                            <div class="product-card reveal" data-energy="gas" data-capacity="1200" data-name="GG-1200H"
+                                data-dimensions="3.2 x 2.1 x 2.6 м" data-power="30 м³/ч" data-noise="56 дБ">
+                                <span class="badge badge-popular">Популярное</span>
+                                <input type="checkbox" class="compare-checkbox" data-product-id="gg1200h-gas">
+                                <label class="compare-label" for="compare-gg1200h-gas">Сравнить</label>
+
+                                <div class="product-image">
+                                    <img src="images/products/gc-1200.png" alt="Установка ГАЙЯ GG-1200H">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                                </div>
+
+                                <h3 class="product-title">GG-1200H</h3>
+                                <p class="product-capacity"><i class="fas fa-fire"></i> 1200 кг/сут</p>
+                                <p class="product-dimensions">Газовая промышленная установка</p>
+
+                                <div class="product-specs-grid">
+                                    <div class="spec-item">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span>3.2 x 2.1 x 2.6 м</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-fire"></i>
+                                        <span>30 м³/ч</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-volume-down"></i>
+                                        <span>56 дБ</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-features">
+                                    <ul>
+                                        <li><i class="fas fa-check-circle"></i> Оптимальная мощность</li>
+                                        <li><i class="fas fa-check-circle"></i> Надежная конструкция</li>
+                                        <li><i class="fas fa-check-circle"></i> Экономия энергоресурсов</li>
+                                        <li><i class="fas fa-check-circle"></i> Длительный срок службы</li>
+                                    </ul>
+                                </div>
+
+                                <div class="product-applications">
+                                    <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
+                                    <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
+                                    <span class="app-tag"><i class="fas fa-building"></i> Промышленные комплексы</span>
+                                </div>
+
+                                <div class="product-actions">
+                                    <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                    <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                                </div>
+                            </div>
+
+                            <!-- GG-2000H Gas -->
+                            <div class="product-card reveal" data-energy="gas" data-capacity="2000" data-name="GG-2000H"
+                                data-dimensions="3.8 x 2.3 x 2.8 м" data-power="40 м³/ч" data-noise="60 дБ">
+                                <span class="badge badge-industrial">Промышленная</span>
+                                <input type="checkbox" class="compare-checkbox" data-product-id="gg2000h-gas">
+                                <label class="compare-label" for="compare-gg2000h-gas">Сравнить</label>
+
+                                <div class="product-image">
+                                    <img src="images/products/gc-2000.png" alt="Установка ГАЙЯ GG-2000H">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                                </div>
+
+                                <h3 class="product-title">GG-2000H</h3>
+                                <p class="product-capacity"><i class="fas fa-fire"></i> 2000 кг/сут</p>
+                                <p class="product-dimensions">Газовая промышленная установка</p>
+
+                                <div class="product-specs-grid">
+                                    <div class="spec-item">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span>3.8 x 2.3 x 2.8 м</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-fire"></i>
+                                        <span>40 м³/ч</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-volume-down"></i>
+                                        <span>60 дБ</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-features">
+                                    <ul>
+                                        <li><i class="fas fa-check-circle"></i> Максимальная производительность</li>
+                                        <li><i class="fas fa-check-circle"></i> Непрерывная работа 24/7</li>
+                                        <li><i class="fas fa-check-circle"></i> Профессиональное оборудование</li>
+                                        <li><i class="fas fa-check-circle"></i> Расширенная гарантия</li>
+                                    </ul>
+                                </div>
+
+                                <div class="product-applications">
+                                    <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
+                                    <span class="app-tag"><i class="fas fa-shopping-cart"></i> ТЦ</span>
+                                    <span class="app-tag"><i class="fas fa-building"></i> Крупные комплексы</span>
+                                </div>
+
+                                <div class="product-actions">
+                                    <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                    <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                                </div>
+                            </div>
+
+                            <!-- Custom Gas 2-1000 Tons -->
+                            <div class="product-card reveal" data-energy="gas" data-capacity="1000000"
+                                data-name="2 - 1000 Тонн" data-dimensions="По запросу" data-power="По запросу"
+                                data-noise="По запросу">
+                                <span class="badge badge-industrial">Промышленная</span>
+                                <input type="checkbox" class="compare-checkbox" data-product-id="custom-gas">
+                                <label class="compare-label" for="compare-custom-gas">Сравнить</label>
+
+                                <div class="product-image">
+                                    <img src="images/products/gc-100t.png" alt="Промышленная газовая установка">
+                                    <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
+                                </div>
+
+                                <h3 class="product-title">GG-3000H</h3>
+                                <p class="product-capacity"><i class="fas fa-fire"></i> От 2 до 1000 тонн</p>
+                                <p class="product-dimensions">Промышленная газовая установка (Custom)</p>
+
+                                <div class="product-specs-grid">
+                                    <div class="spec-item">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span>По запросу</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-fire"></i>
+                                        <span>По запросу</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-volume-down"></i>
+                                        <span>По запросу</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-features">
+                                    <ul>
+                                        <li><i class="fas fa-check-circle"></i> Индивидуальное проектирование</li>
+                                        <li><i class="fas fa-check-circle"></i> Промышленная автоматизация</li>
+                                        <li><i class="fas fa-check-circle"></i> Полный цикл переработки</li>
+                                        <li><i class="fas fa-check-circle"></i> Шеф-монтаж и пусконаладка</li>
+                                    </ul>
+                                </div>
+
+                                <div class="product-applications">
+                                    <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
+                                    <span class="app-tag"><i class="fas fa-city"></i> Города</span>
+                                    <span class="app-tag"><i class="fas fa-recycle"></i> Полигоны ТБО</span>
+                                </div>
+
+                                <div class="product-actions">
+                                    <a href="contacts.html" class="btn btn-outline">Подробнее</a>
+                                    <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                <!-- End Column 2: Gas Models -->
 
-                <div class="filter-group">
-                    <label><i class="fas fa-sort"></i> Сортировка:</label>
-                    <select id="sort-select" class="sort-select">
-                        <option value="capacity">По производительности ↑</option>
-                        <option value="capacity-desc">По производительности ↓</option>
-                        <option value="name">По названию</option>
-                    </select>
+                <!-- Column 3: Customization Sidebar -->
+                <div class="catalog-sidebar">
+                    <h3><i class="fas fa-sliders-h"></i> Кастомизация</h3>
+
+                    <p
+                        style="color: var(--color-gray); font-size: 0.875rem; line-height: 1.6; margin-bottom: var(--spacing-md);">
+                        Нужно нестандартное решение? Подберём оборудование индивидуально под ваши задачи.
+                    </p>
+
+                    <div
+                        style="display: flex; flex-direction: column; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <a href="#"
+                            style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(46,204,113,0.05)); border: 2px solid var(--color-primary); border-radius: var(--radius-md); font-weight: 600; color: var(--color-dark); text-decoration: none;">
+                            <i class="fas fa-plug" style="color: var(--color-primary);"></i>
+                            Электрическое
+                        </a>
+                        <a href="#"
+                            style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(230,126,34,0.05)); border: 2px solid #e74c3c; border-radius: var(--radius-md); font-weight: 600; color: var(--color-dark); text-decoration: none;">
+                            <i class="fas fa-fire" style="color: #e74c3c;"></i>
+                            Газовое
+                        </a>
+                        <a href="contacts.html"
+                            style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--gradient-primary); border-radius: var(--radius-md); font-weight: 600; color: white; text-decoration: none; box-shadow: 0 4px 12px rgba(46,204,113,0.3);">
+                            <i class="fas fa-cogs"></i>
+                            Индивидуальное решение
+                        </a>
+                    </div>
+
+                    <div style="border-top: 1px solid rgba(46,204,113,0.2); padding-top: var(--spacing-md);">
+                        <p
+                            style="font-weight: 600; color: var(--color-dark); margin-bottom: var(--spacing-sm); font-size: 0.875rem;">
+                            <i class="fas fa-phone" style="color: var(--color-primary);"></i>
+                            Свяжитесь с нами:
+                        </p>
+                        <a href="tel:+78123851005"
+                            style="color: var(--color-primary); font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: var(--spacing-sm);">+7
+                            (812) 385 10 05</a>
+                        <a href="contacts.html" class="btn btn-outline"
+                            style="width: 100%; text-align: center;">Написать нам</a>
+                    </div>
                 </div>
+                <!-- End Column 3: Sidebar -->
+
             </div>
+            <!-- End 3-Column Catalog Layout -->
 
-            <!-- Electric Models -->
-            <div class="category-header" id="electric-models">
-                <h2><i class="fas fa-plug"></i> Электрические модели</h2>
-            </div>
-
-            <div class="model-banner">
-                <h3>Электрические модели ГАЙЯ</h3>
-                <p>Энергоэффективные установки для переработки органических отходов с использованием электроэнергии</p>
-            </div>
-
-            <div class="products-grid" style="margin-top: var(--spacing-lg);">
-                <!-- GC-50 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="50" data-name="GC-50"
-                    data-dimensions="1.2 x 0.8 x 1.5 м" data-power="3 кВт" data-noise="45 дБ">
-                    <span class="badge badge-eco">Компактная</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc50-electric">
-                    <label class="compare-label" for="compare-gc50-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-50.png" alt="Установка ГАЙЯ GC-50">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-50</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 50 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>1.2 x 0.8 x 1.5 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>3 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>45 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Минимальное энергопотребление</li>
-                            <li><i class="fas fa-check-circle"></i> Компактный размер</li>
-                            <li><i class="fas fa-check-circle"></i> Простая установка</li>
-                            <li><i class="fas fa-check-circle"></i> Идеально для малого бизнеса</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-coffee"></i> Кафе</span>
-                        <span class="app-tag"><i class="fas fa-store"></i> Магазины</span>
-                        <span class="app-tag"><i class="fas fa-home"></i> Офисы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-100 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="100" data-name="GC-100"
-                    data-dimensions="1.5 x 1.0 x 1.7 м" data-power="5 кВт" data-noise="47 дБ">
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc100-electric">
-                    <label class="compare-label" for="compare-gc100-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-100.png" alt="Установка ГАЙЯ GC-100">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-100</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 100 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>1.5 x 1.0 x 1.7 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>5 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>47 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Оптимальная производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Энергоэффективность</li>
-                            <li><i class="fas fa-check-circle"></i> Низкий уровень шума</li>
-                            <li><i class="fas fa-check-circle"></i> Надежная конструкция</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-coffee"></i> Кафе</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-150 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="150" data-name="GC-150"
-                    data-dimensions="1.7 x 1.1 x 1.8 м" data-power="7 кВт" data-noise="49 дБ">
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc150-electric">
-                    <label class="compare-label" for="compare-gc150-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-150.png" alt="Установка ГАЙЯ GC-150">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-150</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 150 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>1.7 x 1.1 x 1.8 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>7 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>49 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Повышенная производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Автоматизированный процесс</li>
-                            <li><i class="fas fa-check-circle"></i> Простое обслуживание</li>
-                            <li><i class="fas fa-check-circle"></i> Долговечность</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-hospital"></i> Столовые</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-200 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="200" data-name="GC-200"
-                    data-dimensions="1.9 x 1.2 x 1.9 м" data-power="9 кВт" data-noise="50 дБ">
-                    <span class="badge badge-popular">Популярное</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc200-electric">
-                    <label class="compare-label" for="compare-gc200-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-200.png" alt="Установка ГАЙЯ GC-200">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-200</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 200 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>1.9 x 1.2 x 1.9 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>9 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>50 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Высокая эффективность</li>
-                            <li><i class="fas fa-check-circle"></i> Умная система управления</li>
-                            <li><i class="fas fa-check-circle"></i> Экономия ресурсов</li>
-                            <li><i class="fas fa-check-circle"></i> Надежность работы</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
-                        <span class="app-tag"><i class="fas fa-school"></i> Школы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-300 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="300" data-name="GC-300"
-                    data-dimensions="2.1 x 1.3 x 2.0 м" data-power="11 кВт" data-noise="52 дБ">
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc300-electric">
-                    <label class="compare-label" for="compare-gc300-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-300.png" alt="Установка ГАЙЯ GC-300">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-300</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 300 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>2.1 x 1.3 x 2.0 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>11 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>52 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Средняя производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Автоматический контроль</li>
-                            <li><i class="fas fa-check-circle"></i> Минимальное обслуживание</li>
-                            <li><i class="fas fa-check-circle"></i> Энергосбережение</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-400 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="400" data-name="GC-400"
-                    data-dimensions="2.3 x 1.4 x 2.0 м" data-power="13 кВт" data-noise="53 дБ">
-                    <span class="badge badge-recommended">Рекомендуем</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc400-electric">
-                    <label class="compare-label" for="compare-gc400-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-400.png" alt="Установка ГАЙЯ GC-400">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-400</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 400 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>2.3 x 1.4 x 2.0 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>13 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>53 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Оптимальная мощность</li>
-                            <li><i class="fas fa-check-circle"></i> Интеллектуальное управление</li>
-                            <li><i class="fas fa-check-circle"></i> Удаленный мониторинг</li>
-                            <li><i class="fas fa-check-circle"></i> Расширенная гарантия</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
-                        <span class="app-tag"><i class="fas fa-school"></i> Школы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-600 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="600" data-name="GC-600"
-                    data-dimensions="2.4 x 1.5 x 2.0 м" data-power="14 кВт" data-noise="54 дБ">
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc600-electric">
-                    <label class="compare-label" for="compare-gc600-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-600.png" alt="Установка ГАЙЯ GC-600">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-600</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 600 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>2.4 x 1.5 x 2.0 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>14 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>54 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Высокая производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Надежная работа</li>
-                            <li><i class="fas fa-check-circle"></i> Низкие эксплуатационные расходы</li>
-                            <li><i class="fas fa-check-circle"></i> Профессиональная поддержка</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
-                        <span class="app-tag"><i class="fas fa-shopping-cart"></i> ТЦ</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-1000 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="1000" data-name="GC-1000"
-                    data-dimensions="2.5 x 1.5 x 2.0 м" data-power="15 кВт" data-noise="55 дБ">
-                    <span class="badge badge-popular">Популярное</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc1000-electric">
-                    <label class="compare-label" for="compare-gc1000-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-1000.png" alt="Установка ГАЙЯ GC-1000">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-1000</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 1000 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>2.5 x 1.5 x 2.0 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>15 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>55 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Энергоэффективность класса A</li>
-                            <li><i class="fas fa-check-circle"></i> Автоматическая система контроля</li>
-                            <li><i class="fas fa-check-circle"></i> Низкий уровень шума</li>
-                            <li><i class="fas fa-check-circle"></i> Компактные размеры</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-coffee"></i> Кафе</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Отели</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-1200 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="1200" data-name="GC-1200"
-                    data-dimensions="2.8 x 1.6 x 2.1 м" data-power="18 кВт" data-noise="57 дБ">
-                    <span class="badge badge-recommended">Рекомендуем</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc1200-electric">
-                    <label class="compare-label" for="compare-gc1200-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-1200.png" alt="Установка ГАЙЯ GC-1200">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-1200</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 1200 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>2.8 x 1.6 x 2.1 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>18 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>57 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Высокая производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Интеллектуальное управление</li>
-                            <li><i class="fas fa-check-circle"></i> Минимальное обслуживание</li>
-                            <li><i class="fas fa-check-circle"></i> Удаленный мониторинг</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-utensils"></i> Рестораны</span>
-                        <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
-                        <span class="app-tag"><i class="fas fa-school"></i> Школы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GC-2000 Electric -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="2000" data-name="GC-2000"
-                    data-dimensions="3.2 x 1.8 x 2.3 м" data-power="25 кВт" data-noise="60 дБ">
-                    <span class="badge badge-industrial">Промышленная</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gc2000-electric">
-                    <label class="compare-label" for="compare-gc2000-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-2000.png" alt="Установка ГАЙЯ GC-2000">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-2000</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> 2000 кг/сут</p>
-                    <p class="product-dimensions">Электрическая установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>3.2 x 1.8 x 2.3 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>25 кВт</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>60 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Максимальная производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Промышленная надежность</li>
-                            <li><i class="fas fa-check-circle"></i> Расширенная гарантия</li>
-                            <li><i class="fas fa-check-circle"></i> Круглосуточная поддержка</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
-                        <span class="app-tag"><i class="fas fa-shopping-cart"></i> ТЦ</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Комплексы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- Custom Electric 2-1000 Tons -->
-                <div class="product-card reveal" data-energy="electric" data-capacity="1000000" data-name="2-1000 Тонн"
-                    data-dimensions="По запросу" data-power="По запросу" data-noise="По запросу">
-                    <span class="badge badge-industrial">Промышленная</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="custom-electric">
-                    <label class="compare-label" for="compare-custom-electric">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-100t.png" alt="Промышленная электрическая установка">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GC-3000H</h3>
-                    <p class="product-capacity"><i class="fas fa-bolt"></i> От 2 до 1000 тонн</p>
-                    <p class="product-dimensions">Электрическая промышленная линия</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>По запросу</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-plug"></i>
-                            <span>По запросу</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>По запросу</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Индивидуальное проектирование</li>
-                            <li><i class="fas fa-check-circle"></i> Промышленная автоматизация</li>
-                            <li><i class="fas fa-check-circle"></i> Полный цикл переработки</li>
-                            <li><i class="fas fa-check-circle"></i> Шеф-монтаж и пусконаладка</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
-                        <span class="app-tag"><i class="fas fa-city"></i> Города</span>
-                        <span class="app-tag"><i class="fas fa-recycle"></i> Полигоны ТБО</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gas Models -->
-            <div class="category-header gas-models-header" id="gas-models">
-                <h2><i class="fas fa-fire"></i> Газовые модели</h2>
-            </div>
-
-            <div class="model-banner gas-models-banner">
-                <h3>Газовые установки ГАЙЯ</h3>
-                <p>Промышленные газовые установки для переработки больших объемов органических отходов</p>
-            </div>
-
-            <div class="model-banner"
-                style="background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(230, 126, 34, 0.1) 100%); border-color: rgba(231, 76, 60, 0.3);">
-                <h3>От 2 до 1000 Тонн</h3>
-                <p>Мощные промышленные установки для крупномасштабной переработки</p>
-            </div>
-
-            <div class="products-grid" style="margin-top: var(--spacing-lg);">
-                <!-- GG-1000H Gas -->
-                <div class="product-card reveal" data-energy="gas" data-capacity="1000" data-name="GG-1000H"
-                    data-dimensions="3.0 x 2.0 x 2.5 м" data-power="25 м³/ч" data-noise="55 дБ">
-                    <span class="badge badge-industrial">Промышленная</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gg1000h-gas">
-                    <label class="compare-label" for="compare-gg1000h-gas">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-1000.png" alt="Установка ГАЙЯ GG-1000H">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GG-1000H</h3>
-                    <p class="product-capacity"><i class="fas fa-fire"></i> 1000 кг/сут</p>
-                    <p class="product-dimensions">Газовая промышленная установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>3.0 x 2.0 x 2.5 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-fire"></i>
-                            <span>25 м³/ч</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>55 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Высокая производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Промышленная надежность</li>
-                            <li><i class="fas fa-check-circle"></i> Непрерывная работа</li>
-                            <li><i class="fas fa-check-circle"></i> Техподдержка 24/7</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Промышленные комплексы</span>
-                        <span class="app-tag"><i class="fas fa-warehouse"></i> Крупные производства</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GG-1200H Gas -->
-                <div class="product-card reveal" data-energy="gas" data-capacity="1200" data-name="GG-1200H"
-                    data-dimensions="3.2 x 2.1 x 2.6 м" data-power="30 м³/ч" data-noise="56 дБ">
-                    <span class="badge badge-popular">Популярное</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gg1200h-gas">
-                    <label class="compare-label" for="compare-gg1200h-gas">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-1200.png" alt="Установка ГАЙЯ GG-1200H">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GG-1200H</h3>
-                    <p class="product-capacity"><i class="fas fa-fire"></i> 1200 кг/сут</p>
-                    <p class="product-dimensions">Газовая промышленная установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>3.2 x 2.1 x 2.6 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-fire"></i>
-                            <span>30 м³/ч</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>56 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Оптимальная мощность</li>
-                            <li><i class="fas fa-check-circle"></i> Надежная конструкция</li>
-                            <li><i class="fas fa-check-circle"></i> Экономия энергоресурсов</li>
-                            <li><i class="fas fa-check-circle"></i> Длительный срок службы</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
-                        <span class="app-tag"><i class="fas fa-hospital"></i> Больницы</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Промышленные комплексы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- GG-2000H Gas -->
-                <div class="product-card reveal" data-energy="gas" data-capacity="2000" data-name="GG-2000H"
-                    data-dimensions="3.8 x 2.3 x 2.8 м" data-power="40 м³/ч" data-noise="60 дБ">
-                    <span class="badge badge-industrial">Промышленная</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="gg2000h-gas">
-                    <label class="compare-label" for="compare-gg2000h-gas">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-2000.png" alt="Установка ГАЙЯ GG-2000H">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GG-2000H</h3>
-                    <p class="product-capacity"><i class="fas fa-fire"></i> 2000 кг/сут</p>
-                    <p class="product-dimensions">Газовая промышленная установка</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>3.8 x 2.3 x 2.8 м</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-fire"></i>
-                            <span>40 м³/ч</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>60 дБ</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Максимальная производительность</li>
-                            <li><i class="fas fa-check-circle"></i> Непрерывная работа 24/7</li>
-                            <li><i class="fas fa-check-circle"></i> Профессиональное оборудование</li>
-                            <li><i class="fas fa-check-circle"></i> Расширенная гарантия</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
-                        <span class="app-tag"><i class="fas fa-shopping-cart"></i> ТЦ</span>
-                        <span class="app-tag"><i class="fas fa-building"></i> Крупные комплексы</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-
-                <!-- Custom Gas 2-1000 Tons -->
-                <div class="product-card reveal" data-energy="gas" data-capacity="1000000" data-name="2 - 1000 Тонн"
-                    data-dimensions="По запросу" data-power="По запросу" data-noise="По запросу">
-                    <span class="badge badge-industrial">Промышленная</span>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="custom-gas">
-                    <label class="compare-label" for="compare-custom-gas">Сравнить</label>
-
-                    <div class="product-image">
-                        <img src="images/products/gc-100t.png" alt="Промышленная газовая установка">
-                        <button class="quick-view-btn"><i class="fas fa-eye"></i> Быстрый просмотр</button>
-                    </div>
-
-                    <h3 class="product-title">GG-3000H</h3>
-                    <p class="product-capacity"><i class="fas fa-fire"></i> От 2 до 1000 тонн</p>
-                    <p class="product-dimensions">Промышленная газовая установка (Custom)</p>
-
-                    <div class="product-specs-grid">
-                        <div class="spec-item">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>По запросу</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-fire"></i>
-                            <span>По запросу</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-volume-down"></i>
-                            <span>По запросу</span>
-                        </div>
-                    </div>
-
-                    <div class="product-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Индивидуальное проектирование</li>
-                            <li><i class="fas fa-check-circle"></i> Промышленная автоматизация</li>
-                            <li><i class="fas fa-check-circle"></i> Полный цикл переработки</li>
-                            <li><i class="fas fa-check-circle"></i> Шеф-монтаж и пусконаладка</li>
-                        </ul>
-                    </div>
-
-                    <div class="product-applications">
-                        <span class="app-tag"><i class="fas fa-industry"></i> Заводы</span>
-                        <span class="app-tag"><i class="fas fa-city"></i> Города</span>
-                        <span class="app-tag"><i class="fas fa-recycle"></i> Полигоны ТБО</span>
-                    </div>
-
-                    <div class="product-actions">
-                        <a href="contacts.html" class="btn btn-outline">Подробнее</a>
-                        <a href="contacts.html" class="btn btn-primary">Узнать цену</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </section>
+
 
     <!-- Compare Panel -->
     <div id="compare-panel" class="compare-panel">

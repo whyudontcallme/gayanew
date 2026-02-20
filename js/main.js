@@ -259,7 +259,11 @@ function scrollToForm() {
 }
 
 // Show popup after 1 second if not previously closed
-window.addEventListener('load', function () {
+// Using a separate listener or integrating into DOMContentLoaded for speed
+document.addEventListener('DOMContentLoaded', function () {
+    // Keep existing DOMContentLoaded logic above...
+
+    // Popup specific logic that follows
     const popupClosed = localStorage.getItem('popupClosed');
     if (!popupClosed) {
         setTimeout(showPopup, 1000);
