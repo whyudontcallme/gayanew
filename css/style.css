@@ -19,7 +19,7 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-  --gradient-hero: linear-gradient(135deg, #0d2e1a 0%, #1a4d2e 50%, #0f3d22 100%);
+  --gradient-hero: linear-gradient(135deg, #002b36 0%, #004d4d 50%, #002b36 100%);
   --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
 
   /* Spacing */
@@ -477,10 +477,34 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(46,204,113,0.1)"/></svg>');
-  background-size: cover;
-  background-position: bottom;
-  opacity: 0.3;
+  background: radial-gradient(circle at 50% -20%, rgba(46, 204, 113, 0.2) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,0 L1200,0 L600,600 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+  background-size: 200% 100%;
+  animation: lightMove 10s linear infinite;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes lightMove {
+  from {
+    background-position: -100% 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  }
 }
 
 .hero-content {
@@ -646,6 +670,23 @@ p {
   transform: scale(1.1);
 }
 
+/* Seaweed Sway Animation (for floating leaves) */
+@keyframes seaweedSway {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(15px) rotate(5deg);
+  }
+
+  75% {
+    transform: translateX(-15px) rotate(-5deg);
+  }
+}
+
 
 /* ========================================
    Animations
@@ -745,11 +786,11 @@ p {
 
 .leaf {
   position: absolute;
-  bottom: -20px;
-  font-size: 1.5rem;
-  animation: leafFloat linear infinite;
+  bottom: -50px;
+  font-size: 2rem;
+  animation: leafFloat linear infinite, seaweedSway 4s ease-in-out infinite;
   opacity: 0;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 10px rgba(46, 204, 113, 0.5));
 }
 
 .leaf:nth-child(1) {

@@ -44,11 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Apply filters
     function applyFilters() {
-        let maxCapacity = capacityRange ? parseInt(capacityRange.value) : 2000;
-
-        // If slider is at max (2000), show all larger capacities
-        if (capacityRange && capacityRange.value === capacityRange.max) {
-            maxCapacity = Infinity;
+        let maxCapacity = Infinity;
+        if (capacityRange) {
+            maxCapacity = parseInt(capacityRange.value);
+            // If slider is at max, show all larger capacities
+            if (capacityRange.value === capacityRange.max) {
+                maxCapacity = Infinity;
+            }
         }
 
         productCards.forEach(card => {
