@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Калькулятор экономии | ГАЙЯ</title>
+  <title>Бенефиты | ГАЙЯ-РУ</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -382,15 +382,19 @@
     <div class="header-main">
       <div class="container">
         <div class="logo">
-          <a href="index.html"><i class="fas fa-clover"
-              style="color: var(--color-primary-light); margin-right: 5px;"></i>ГАЙЯ-РУ</a>
+          <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="images/partner/photo_2026-02-25_14-42-45.jpg" style="height: 30px; margin-right: 10px;"
+              alt="GAIA Logo">
+            <span
+              style="font-weight: 800; color: var(--color-dark); font-size: 1.2rem; letter-spacing: 0.5px;">ГАЙЯ-РУ</span>
+          </a>
         </div>
 
         <nav class="nav-menu">
           <a href="index.html" class="nav-link">Главная</a>
           <a href="catalog.html" class="nav-link">Каталог</a>
           <a href="technology.html" class="nav-link">О технологии</a>
-          <a href="calculator.html" class="nav-link active">Калькулятор</a>
+          <a href="calculator.html" class="nav-link active">Бенефиты</a>
           <a href="team.html" class="nav-link">Команда</a>
           <a href="about.html" class="nav-link">О компании</a>
           <a href="contacts.html" class="nav-link">Контакты</a>
@@ -403,95 +407,125 @@
     </div>
   </header>
 
-  <!-- ВАШ КАЛЬКУЛЯТОР -->
-  <div class="container">
-    <div id="calculator-container">
-      <div id="example-section">
-        <strong>📌 Пример расчёта:</strong><br>
-        Столовая с <strong>1000 кг пищевых отходов в сутки</strong>, <strong>расход на вывоз 30 000 рублей в
-          сутки</strong>.<br>
-        Установка ГАЙЯ-GG-1000H (газовая) расходует <strong>100 м³ газа</strong>. Экономия <strong>29 000 рублей в
-          сутки</strong> — <strong>10 585 000 рублей в год</strong>.
-      </div>
+  <section class="section" style="padding-top: var(--spacing-xl); background: var(--color-light);">
+    <div class="container">
+      <p class="section-subtitle">Выгоды внедрения</p>
+      <h1 class="section-title">Бенефиты ГАЙЯ</h1>
 
-      <div class="user-data-prompt">
-        Внесите ваши данные
-      </div>
-
-      <div class="energy-source-label">
-        Источник энергии на объекте
-      </div>
-      <div class="tab-group">
-        <div class="tab active" data-tab="electric">Электричество</div>
-        <div class="tab" data-tab="gas">Газ</div>
-      </div>
-
-      <div class="form-group">
-        <label>Объём отходов в сутки</label>
-        <div class="form-row">
-          <div class="form-field">
-            <input type="number" id="waste-amount" placeholder="Например: 1000" min="0" step="10" value="">
-          </div>
-          <select id="waste-unit" class="unit-select">
-            <option value="kg">кг/сут</option>
-            <option value="t">т/сут</option>
-          </select>
+      <div class="benefits-grid"
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-top: var(--spacing-lg); align-items: start;">
+        <!-- Left Column: Non-material -->
+        <div class="reveal"
+          style="background: var(--color-white); padding: var(--spacing-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+          <h3
+            style="color: var(--color-primary); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-heart"></i> Нематериальные бенефиты
+          </h3>
+          <p style="color: var(--color-gray); margin-bottom: var(--spacing-md); line-height: 1.8;">
+            Внедрение оборудования ГАЙЯ — это не только экономия, но и вклад в устойчивое развитие вашего бизнеса:
+          </p>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-check-circle" style="color: var(--color-primary); margin-top: 5px;"></i>
+              <span><strong>ESG и Экология:</strong> Реальное снижение углеродного следа и поддержка "зеленого"
+                имиджа.</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-shield-alt" style="color: var(--color-primary); margin-top: 5px;"></i>
+              <span><strong>Снижение рисков:</strong> Полная стерилизация отходов исключает штрафы и проверки по
+                СанПиН.</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-box" style="color: var(--color-primary); margin-top: 5px;"></i>
+              <span><strong>Циркулярная экономика:</strong> Переработка отходов в полезный ресурс (удобрение) на
+                месте.</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
+              <i class="fas fa-thumbs-up" style="color: var(--color-primary); margin-top: 5px;"></i>
+              <span><strong>Лояльность персонала:</strong> Чистая производственная зона без запахов и вредителей.</span>
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label>Сколько вы платите сегодня за утилизацию (руб/сут)</label>
-        <div class="form-row">
-          <div class="form-field">
-            <input type="number" id="current-cost" placeholder="Например: 30000" min="0" value="">
+        <!-- Right Column: Material (Calculator) -->
+        <div class="reveal"
+          style="background: var(--color-white); padding: var(--spacing-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 2px solid var(--color-primary-light);">
+          <h3
+            style="color: var(--color-primary); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-chart-line"></i> Материальные бенефиты
+          </h3>
+          <div id="calculator-container" style="padding: 0; box-shadow: none; border: none;">
+            <div id="example-section"
+              style="background: #f8fcf9; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem;">
+              <strong>📌 Пример расчёта:</strong><br>
+              Столовая с 1000 кг отходов/сутки. Экономия до 29 000 руб./сутки — это более 10 млн руб. экономии в год!
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label style="font-weight: 600;">Источник энергии:</label>
+              <div class="tab-group" style="display: flex; gap: 10px; margin-top: 5px;">
+                <div class="tab active" data-tab="electric"
+                  style="flex: 1; text-align: center; padding: 8px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; background: #eee;">
+                  Электро</div>
+                <div class="tab" data-tab="gas"
+                  style="flex: 1; text-align: center; padding: 8px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; background: #fff;">
+                  Газ</div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label style="font-weight: 600;">Отходы кг/сут:</label>
+              <input type="number" id="waste-amount" class="form-control" placeholder="Например: 1000"
+                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label style="font-weight: 600;">Стоимость вывоза (руб/сут):</label>
+              <input type="number" id="current-cost" class="form-control" placeholder="Например: 30000"
+                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+
+            <button id="calculate-btn"
+              style="width: 100%; padding: 15px; background: var(--color-primary); color: white; border: none; border-radius: 6px; font-weight: 700; cursor: pointer;">Рассчитать
+              экономию</button>
+
+            <div id="result" style="margin-top: 20px;"></div>
           </div>
         </div>
-      </div>
-
-      <div class="form-group" id="energy-cost-group">
-        <label>Стоимость электроэнергии (руб/кВт·ч)</label>
-        <div class="form-row">
-          <div class="form-field">
-            <input type="number" id="energy-cost" placeholder="Например: 10" min="0" step="0.1" value="">
-          </div>
-        </div>
-      </div>
-
-      <button id="calculate-btn">Рассчитать экономию</button>
-
-      <div id="result"></div>
-    </div>
-
-    <!-- Баннеры -->
-    <div class="partner-cards">
-      <div class="partner-card">
-        <h3>Стандартное решение</h3>
-        <p>Рестораны, кафе</p>
-        <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/d95/d95eab5865b7174bbe84873b16447901/partner6_1x.png"
-          alt="Стандартное решение">
-      </div>
-
-      <div class="partner-card">
-        <h3>Решение для МКД</h3>
-        <p>Многоквартирные дома</p>
-        <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/95b/95bd1ac945b684c635ac96d54b1f19c3/equip_1_1x.png"
-          alt="Решение для МКД">
-      </div>
-
-      <div class="partner-card">
-        <h3>Промышленные установки</h3>
-        <p>Для крупных объектов</p>
-        <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/bbf/bbfdb9273d42c3228f2f504c92a60e32/equip_3_1x.png"
-          alt="Промышленные установки">
-      </div>
-
-      <div class="partner-card">
-        <h3>Промышленные комплексы</h3>
-        <p>Для максимальных объемов переработки</p>
-        <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/b62/b629ef01a47b9ad066dac4113aab843d/200_1x.png"
-          alt="Промышленные комплексы">
       </div>
     </div>
+  </section>
+
+  <!-- Баннеры -->
+  <div class="partner-cards">
+    <div class="partner-card">
+      <h3>Стандартное решение</h3>
+      <p>Рестораны, кафе</p>
+      <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/d95/d95eab5865b7174bbe84873b16447901/partner6_1x.png"
+        alt="Стандартное решение">
+    </div>
+
+    <div class="partner-card">
+      <h3>Решение для МКД</h3>
+      <p>Многоквартирные дома</p>
+      <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/95b/95bd1ac945b684c635ac96d54b1f19c3/equip_1_1x.png"
+        alt="Решение для МКД">
+    </div>
+
+    <div class="partner-card">
+      <h3>Промышленные установки</h3>
+      <p>Для крупных объектов</p>
+      <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/bbf/bbfdb9273d42c3228f2f504c92a60e32/equip_3_1x.png"
+        alt="Промышленные установки">
+    </div>
+
+    <div class="partner-card">
+      <h3>Промышленные комплексы</h3>
+      <p>Для максимальных объемов переработки</p>
+      <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/b62/b629ef01a47b9ad066dac4113aab843d/200_1x.png"
+        alt="Промышленные комплексы">
+    </div>
+  </div>
   </div>
 
   <script>
@@ -621,7 +655,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3><i class="fas fa-clover" style="margin-right: 8px;"></i>ГАЙЯ-РУ</h3>
+          <h3>ГАЙЯ-РУ</h3>
           <p>Профессиональные решения для утилизации отходов.</p>
 
         </div>

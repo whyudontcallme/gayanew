@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Sort products
     function sortProducts() {
-        const containers = document.querySelectorAll('.products-grid');
+        const containers = document.querySelectorAll('.catalog-col-products');
 
         containers.forEach(container => {
             const cards = Array.from(container.querySelectorAll('.product-card'));
