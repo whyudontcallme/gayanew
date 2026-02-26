@@ -10,8 +10,8 @@
   --color-primary-dark: #27ae60;
   --color-primary-light: #58d68d;
   --color-secondary: #3498db;
-  --color-dark: #1a1a2e;
-  --color-dark-alt: #16213e;
+  --color-dark: #006666;
+  --color-dark-alt: #004d4d;
   --color-light: #f8f9fa;
   --color-white: #ffffff;
   --color-gray: #95a5a6;
@@ -19,7 +19,7 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-  --gradient-hero: linear-gradient(135deg, #002b36 0%, #004d4d 50%, #002b36 100%);
+  --gradient-hero: linear-gradient(135deg, #004d4d 0%, #006666 50%, #004d4d 100%);
   --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
 
   /* Spacing */
@@ -838,7 +838,7 @@ p {
 }
 
 .industrial-header {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+  background: linear-gradient(135deg, #006666 0%, #004d4d 100%) !important;
   margin-top: var(--spacing-xl);
 }
 
