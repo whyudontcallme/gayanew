@@ -322,11 +322,12 @@ p {
   color: var(--color-dark);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
   flex-wrap: nowrap;
 }
@@ -334,7 +335,7 @@ p {
 .nav-link {
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
   transition: var(--transition-base);
   white-space: nowrap;
