@@ -75,11 +75,33 @@
       transform: translateY(-2px);
     }
 
-    .tab.active {
-      background: var(--gradient-primary);
+    .tab.active[data-tab="electric"] {
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
       color: white;
-      border-color: var(--color-primary);
-      box-shadow: var(--shadow-md);
+      border-color: #2980b9;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    }
+
+    .tab.active[data-tab="gas"] {
+      background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+      color: white;
+      border-color: #d35400;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+    }
+
+    .calculator-card {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+    }
+
+    .calculator-card.mode-electric {
+      border-color: rgba(52, 152, 219, 0.3);
+      background: linear-gradient(to bottom right, #ffffff, #f0f7ff);
+    }
+
+    .calculator-card.mode-gas {
+      border-color: rgba(230, 126, 34, 0.3);
+      background: linear-gradient(to bottom right, #ffffff, #fff5eb);
     }
 
     .form-group {
@@ -341,8 +363,13 @@
     <div class="popup-avatar">👨‍💼</div>
     <div class="popup-content">
       <h3>Добрый день!</h3>
-      <p>Меня зовут <strong>Александр</strong>, с удовольствием вам перезвоним! Оставьте вашу заявку через форму
-        обратной связи ниже.</p>
+      <p>Меня зовут <strong>Александр</strong>. Мы можем вам перезвонить — оставьте заявку ниже. Либо позвоните
+        нам сами:</p>
+      <p
+        style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+        <i class="fas fa-phone"></i> <a href="tel:+78123851005" style="color: var(--color-primary);">+7 (812)
+          385 10 05</a>
+      </p>
       <button class="btn btn-primary btn-block" onclick="scrollToForm()" style="width: 100%;">
         <i class="fas fa-phone"></i> Заказать звонок
       </button>
@@ -383,10 +410,9 @@
       <div class="container">
         <div class="logo">
           <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="images/partner/photo_2026-02-25_14-42-45.jpg" style="height: 30px; margin-right: 10px;"
+            <img src="images/partner/photo_2026-02-25_14-42-45.jpg" style="height: 60px; margin-right: 12px;"
               alt="GAIA Logo">
-            <span
-              style="font-weight: 800; color: var(--color-dark); font-size: 1.2rem; letter-spacing: 0.5px;">ГАЙЯ-РУ</span>
+            <span class="logo-text">ГАЙЯ-РУ</span>
           </a>
         </div>
 
@@ -397,7 +423,9 @@
           <a href="calculator.html" class="nav-link active">Бенефиты</a>
           <a href="team.html" class="nav-link">Команда</a>
           <a href="about.html" class="nav-link">О компании</a>
+          <a href="videos.html" class="nav-link">Видеоролики</a>
           <a href="contacts.html" class="nav-link">Контакты</a>
+          <a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank" class="nav-link btn-account">Личный кабинет</a>
         </nav>
 
         <button class="mobile-menu-toggle" aria-label="Меню">
@@ -416,7 +444,7 @@
         style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-top: var(--spacing-lg); align-items: start;">
         <!-- Left Column: Non-material -->
         <div class="reveal"
-          style="background: var(--color-white); padding: var(--spacing-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+          style="background: var(--color-white); padding: 3.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); transition: transform 0.3s;">
           <h3
             style="color: var(--color-primary); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 10px;">
             <i class="fas fa-heart"></i> Нематериальные бенефиты
@@ -425,20 +453,17 @@
             Внедрение оборудования ГАЙЯ — это не только экономия, но и вклад в устойчивое развитие вашего бизнеса:
           </p>
           <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
-              <i class="fas fa-check-circle" style="color: var(--color-primary); margin-top: 5px;"></i>
-              <span><strong>ESG и Экология:</strong> Реальное снижение углеродного следа и поддержка "зеленого"
-                имиджа.</span>
+            <li style="margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start;">
+              <i class="fas fa-shield-alt" style="color: var(--color-primary); margin-top: 6px; font-size: 1.4rem;"></i>
+              <span style="font-size: 1.1rem;"><strong>Соблюдение правил СанПиН:</strong> Полная стерилизация отходов исключает штрафы и предписания.</span>
             </li>
             <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
               <i class="fas fa-shield-alt" style="color: var(--color-primary); margin-top: 5px;"></i>
-              <span><strong>Снижение рисков:</strong> Полная стерилизация отходов исключает штрафы и проверки по
-                СанПиН.</span>
+              <span><strong>Соблюдение правил СанПиН:</strong> Полная стерилизация отходов исключает штрафы и предписания.</span>
             </li>
-            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
-              <i class="fas fa-box" style="color: var(--color-primary); margin-top: 5px;"></i>
-              <span><strong>Циркулярная экономика:</strong> Переработка отходов в полезный ресурс (удобрение) на
-                месте.</span>
+            <li style="margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start;">
+              <i class="fas fa-box" style="color: var(--color-primary); margin-top: 6px; font-size: 1.4rem;"></i>
+              <span style="font-size: 1.1rem;"><strong>Циркулярная экономика:</strong> Переработка отходов в полезный ресурс на месте образования.</span>
             </li>
             <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
               <i class="fas fa-thumbs-up" style="color: var(--color-primary); margin-top: 5px;"></i>
@@ -448,8 +473,8 @@
         </div>
 
         <!-- Right Column: Material (Calculator) -->
-        <div class="reveal"
-          style="background: var(--color-white); padding: var(--spacing-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 2px solid var(--color-primary-light);">
+        <div id="calculator-card" class="reveal calculator-card mode-electric"
+          style="background: var(--color-white); padding: 3.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); transition: all 0.5s; position: relative; overflow: hidden;">
           <h3
             style="color: var(--color-primary); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 10px;">
             <i class="fas fa-chart-line"></i> Материальные бенефиты
@@ -465,24 +490,36 @@
               <label style="font-weight: 600;">Источник энергии:</label>
               <div class="tab-group" style="display: flex; gap: 10px; margin-top: 5px;">
                 <div class="tab active" data-tab="electric"
-                  style="flex: 1; text-align: center; padding: 8px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; background: #eee;">
-                  Электро</div>
+                  style="flex: 1; text-align: center; padding: 14px 20px; border: 2px solid var(--color-primary); border-radius: 10px; cursor: pointer; background: var(--gradient-primary); color: white; font-weight: 700; font-size: 16px; box-shadow: 0 4px 15px rgba(46,204,113,0.4);">
+                  ⚡ Электро</div>
                 <div class="tab" data-tab="gas"
-                  style="flex: 1; text-align: center; padding: 8px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; background: #fff;">
-                  Газ</div>
+                  style="flex: 1; text-align: center; padding: 14px 20px; border: 2px solid #555; border-radius: 10px; cursor: pointer; background: #fff; font-weight: 700; font-size: 16px; color: #333; transition: all 0.3s;">
+                  🔥 Газ</div>
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 15px;">
-              <label style="font-weight: 600;">Отходы кг/сут:</label>
-              <input type="number" id="waste-amount" class="form-control" placeholder="Например: 1000"
-                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+              <label style="font-weight: 600;">Отходы в сутки:</label>
+              <div style="display: flex; gap: 10px;">
+                <input type="number" id="waste-amount" class="form-control" placeholder="Например: 1000"
+                  style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
+                <select id="waste-unit" style="width: 80px; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; background: #fff; cursor: pointer; outline: none;">
+                  <option value="kg">кг</option>
+                  <option value="t">тонн</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="energy-cost-group" class="form-group" style="margin-bottom: 15px;">
+              <label style="font-weight: 600;">Стоимость электроэнергии (руб/кВт·ч):</label>
+              <input type="number" id="energy-cost" class="form-control" placeholder="Например: 10" min="0" step="0.1" value="8"
+                style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
             </div>
 
             <div class="form-group" style="margin-bottom: 20px;">
-              <label style="font-weight: 600;">Стоимость вывоза (руб/сут):</label>
+              <label style="font-weight: 600;">Ваша текущая стоимость вывоза (руб/сут):</label>
               <input type="number" id="current-cost" class="form-control" placeholder="Например: 30000"
-                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
             </div>
 
             <button id="calculate-btn"
@@ -525,8 +562,28 @@
       <img src="https://cdn-ru.bitrix24.ru/b9418119/landing/b62/b629ef01a47b9ad066dac4113aab843d/200_1x.png"
         alt="Промышленные комплексы">
     </div>
+
+    <div class="partner-card">
+      <h3>Индивидуальные решения</h3>
+      <p>Индивидуальные проекты любой сложности для вашего объекта</p>
+      <img src="images/partner/photo_2026-02-25_14-42-45.jpg"
+        alt="Индивидуальные решения">
+    </div>
   </div>
   </div>
+
+  <!-- Cleaner World Banner -->
+  <section style="background: linear-gradient(135deg, #004d4d 0%, #006666 50%, #2ecc71 100%); padding: 100px 40px; text-align: center; margin-top: var(--spacing-xl); color: white;">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: var(--spacing-md);">
+        <div style="font-size: 5rem; margin-bottom: var(--spacing-sm);">🌍</div>
+        <h2 style="color: white; font-size: 3.5rem; line-height: 1.2; font-weight: 800; -webkit-text-fill-color: white; background: none; margin-bottom: 0;">Объединяем людей вместе,<br>чтобы сделать мир чище</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.4rem; max-width: 600px; margin: 0 auto;">Инновационные технологии для экологичного будущего вашего бизнеса.</p>
+        <a href="contacts.html" class="btn btn-primary btn-large" style="background: white; color: var(--color-dark); border: none; font-weight: 800; font-size: 1.2rem; padding: 20px 50px;">Связаться с нами</a>
+      </div>
+    </div>
+  </section>
+
 
   <script>
     // Данные из Мусо.xlsx
@@ -564,19 +621,20 @@
       if (unit === 't') amount *= 1000;
 
       // Restriction: Gas models only available for 1000kg+ per day
-      if (activeTab === 'gas' && amount < 1000) {
+        if (activeTab === 'gas' && amount < 1000) {
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `
-          <div style="text-align: center; padding: var(--spacing-lg); background: #fff3cd; border: 2px solid #ffc107; border-radius: var(--radius-md);">
-            <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #ff9800; margin-bottom: var(--spacing-sm);"></i>
-            <h3 style="color: #ff6f00; margin-bottom: var(--spacing-sm);">Газовые установки недоступны</h3>
-            <p style="color: #666; margin-bottom: 0;">
+          <div class="reveal-inner" style="text-align: center; padding: 25px; background: #fff8eb; border: 2px solid #e67e22; border-radius: 12px; box-shadow: 0 4px 12px rgba(230, 126, 34, 0.1);">
+            <i class="fas fa-exclamation-triangle" style="font-size: 2.5rem; color: #e67e22; margin-bottom: 15px;"></i>
+            <h3 style="color: #d35400; margin-bottom: 10px; font-weight: 800;">Газовые установки недоступны</h3>
+            <p style="color: #444; margin-bottom: 0; line-height: 1.6;">
               Газовые модели доступны только для объемов от <strong>1000 кг (1 тонна) отходов в сутки</strong>.<br>
-              Пожалуйста, выберите электрическую модель или увеличьте объем отходов.
+              Пожалуйста, выберите <strong>электрическую модель</strong> или укажите больший объем отходов.
             </p>
           </div>
         `;
         resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
       }
 
@@ -616,28 +674,40 @@
     // Обработка вкладок
     document.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(t => {
+          t.classList.remove('active');
+          t.style.borderColor = '#ddd';
+          t.style.background = '#fff';
+          t.style.color = '#333';
+        });
+        
         tab.classList.add('active');
         const tabType = tab.dataset.tab;
+        
+        // Update Card Theme
+        const card = document.getElementById('calculator-card');
+        card.classList.remove('mode-electric', 'mode-gas');
+        card.classList.add('mode-' + tabType);
+        
         const energyGroup = document.getElementById('energy-cost-group');
         if (tabType === 'gas') {
           energyGroup.innerHTML = `
-            <label>Стоимость газа (руб/м³)</label>
-            <div class="form-row">
-              <div class="form-field">
-                <input type="number" id="energy-cost" placeholder="Например: 10" min="0" step="0.1" value="">
-              </div>
-            </div>
+            <label style="font-weight: 600;">Стоимость газа (руб/м³):</label>
+            <input type="number" id="energy-cost" class="form-control" placeholder="Например: 10" min="0" step="0.1" value="10"
+              style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
           `;
+          tab.style.borderColor = '#d35400';
+          tab.style.background = 'linear-gradient(135deg, #e67e22 0%, #d35400 100%)';
+          tab.style.color = 'white';
         } else {
           energyGroup.innerHTML = `
-            <label>Стоимость электроэнергии (руб/кВт·ч)</label>
-            <div class="form-row">
-              <div class="form-field">
-                <input type="number" id="energy-cost" placeholder="Например: 10" min="0" step="0.1" value="">
-              </div>
-            </div>
+            <label style="font-weight: 600;">Стоимость электроэнергии (руб/кВт·ч):</label>
+            <input type="number" id="energy-cost" class="form-control" placeholder="Например: 10" min="0" step="0.1" value="8"
+              style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
           `;
+          tab.style.borderColor = '#2980b9';
+          tab.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
+          tab.style.color = 'white';
         }
         // Сброс результата при смене вкладки
         document.getElementById('result').style.display = 'none';
@@ -655,7 +725,10 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>ГАЙЯ-РУ</h3>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--spacing-md);">
+            <img src="images/partner/photo_2026-02-25_14-42-45.jpg" style="height: 50px;" alt="GAIA Logo">
+            <h3 style="margin-bottom: 0;">ГАЙЯ-РУ</h3>
+          </div>
           <p>Профессиональные решения для утилизации отходов.</p>
 
         </div>
@@ -674,6 +747,15 @@
             <i class="fas fa-map-marker-alt" style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
             <span>Санкт-Петербург,<br>Приморский пр-т, д.50, лит. Б</span>
           </p>
+          <!-- Mini Map -->
+          <a href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C+%D0%9F%D1%80%D0%B8%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D0%B9+%D0%BF%D1%80-%D1%82%2C+%D0%B4.50"
+            target="_blank"
+            style="display: block; margin-top: var(--spacing-sm); border-radius: var(--radius-sm); overflow: hidden; border: 2px solid rgba(46,204,113,0.3); transition: border-color 0.3s;"
+            title="Открыть карту">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=30.218049%2C59.988786&z=15&pt=30.218049,59.988786,pm2rdl"
+              width="100%" height="150" frameborder="0" allowfullscreen="true" style="display: block;"></iframe>
+          </a>
         </div>
 
         <div class="footer-section">
@@ -683,6 +765,7 @@
           <p><a href="technology.html">О технологии</a></p>
           <p><a href="team.html">Команда</a></p>
           <p><a href="about.html">О компании</a></p>
+          <p><a href="videos.html">Видеоролики</a></p>
           <p><a href="contacts.html">Контакты</a></p>
           <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
               style="color: var(--color-primary); font-weight: 600;">Личный кабинет</a></p>
@@ -690,7 +773,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2025</span> ГАЙЯ-РУ. Все права защищены.</p>
+        <p>&copy; <span id="current-year">2026</span> ГАЙЯ-РУ. Все права защищены.</p>
       </div>
     </div>
   </footer>

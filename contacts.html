@@ -134,8 +134,13 @@
         <div class="popup-avatar">👨‍💼</div>
         <div class="popup-content">
             <h3>Добрый день!</h3>
-            <p>Меня зовут <strong>Александр</strong>, с удовольствием вам перезвоним! Оставьте вашу заявку через форму
-                обратной связи ниже.</p>
+            <p>Меня зовут <strong>Александр</strong>. Мы можем вам перезвонить — оставьте заявку ниже. Либо позвоните
+                нам сами:</p>
+            <p
+                style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                <i class="fas fa-phone"></i> <a href="tel:+78123851005" style="color: var(--color-primary);">+7 (812)
+                    385 10 05</a>
+            </p>
             <button class="btn btn-primary btn-block" onclick="scrollToForm()" style="width: 100%;">
                 <i class="fas fa-phone"></i> Заказать звонок
             </button>
@@ -180,9 +185,9 @@
                 <div class="logo">
                     <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
                         <img src="images/partner/photo_2026-02-25_14-42-45.jpg"
-                            style="height: 30px; margin-right: 10px;" alt="GAIA Logo">
+                            style="height: 60px; margin-right: 12px;" alt="GAIA Logo">
                         <span
-                            style="font-weight: 800; color: var(--color-dark); font-size: 1.2rem; letter-spacing: 0.5px;">ГАЙЯ-РУ</span>
+                            class="logo-text">ГАЙЯ-РУ</span>
                     </a>
                 </div>
 
@@ -193,7 +198,9 @@
                     <a href="calculator.html" class="nav-link">Бенефиты</a>
                     <a href="team.html" class="nav-link">Команда</a>
                     <a href="about.html" class="nav-link">О компании</a>
+                    <a href="videos.html" class="nav-link">Видеоролики</a>
                     <a href="contacts.html" class="nav-link active">Контакты</a>
+                    <a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank" class="nav-link btn-account">Личный кабинет</a>
                 </nav>
 
                 <button class="mobile-menu-toggle" aria-label="Меню">
@@ -203,11 +210,14 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="section" style="padding-top: var(--spacing-xl); background: var(--color-light);">
-        <div class="container">
-            <p class="section-subtitle">Свяжитесь с нами</p>
-            <h1 class="section-title">Контакты</h1>
+    <!-- Page Banner -->
+    <section class="page-banner reveal">
+        <div class="container text-center">
+            <span class="banner-subtitle">Свяжитесь с нами</span>
+            <h1 class="banner-title">Наши контакты</h1>
+            <p class="banner-description">Мы всегда на связи, чтобы ответить на ваши вопросы и предложить лучшее решение для вашего бизнеса</p>
+        </div>
+    </section>
 
             <div class="contact-grid">
                 <!-- Contact Info -->
@@ -253,27 +263,12 @@
                     <h3 style="margin-bottom: var(--spacing-md);">Напишите нам</h3>
                     <form class="contact-form">
                         <div class="form-group">
-                            <label for="name">Ваше имя</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Иван Иванов"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control"
-                                placeholder="example@mail.ru" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Телефон</label>
+                            <label for="phone">Ваш номер телефона</label>
                             <input type="tel" id="phone" name="phone" class="form-control"
                                 placeholder="+7 (___) ___-__-__" required>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Сообщение</label>
-                            <textarea id="message" name="message" class="form-control" rows="4"
-                                placeholder="Ваш вопрос..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Отправить
-                            заявку</button>
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Перезвоните
+                            мне</button>
                     </form>
                 </div>
             </div>
@@ -339,6 +334,7 @@
                     <p><a href="technology.html">О технологии</a></p>
                     <p><a href="team.html">Команда</a></p>
                     <p><a href="about.html">О компании</a></p>
+                    <p><a href="videos.html">Видеоролики</a></p>
                     <p><a href="contacts.html">Контакты</a></p>
                     <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
                             style="color: var(--color-primary); font-weight: 600;">Личный кабинет</a></p>

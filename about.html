@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="О компании ГАЙЯ-РУ - официальный представитель корейской компании ГАЙЯ Corp. в России">
+        content="О компании ГАЙЯ-РУ - профессиональные решения для утилизации органических отходов в России">
     <title>О компании - ГАЙЯ-РУ</title>
 
     <!-- Fonts -->
@@ -132,8 +132,13 @@
         <div class="popup-avatar">👨‍💼</div>
         <div class="popup-content">
             <h3>Добрый день!</h3>
-            <p>Меня зовут <strong>Александр</strong>, с удовольствием вам перезвоним! Оставьте вашу заявку через форму
-                обратной связи ниже.</p>
+            <p>Меня зовут <strong>Александр</strong>. Мы можем вам перезвонить — оставьте заявку ниже. Либо позвоните
+                нам сами:</p>
+            <p
+                style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+                <i class="fas fa-phone"></i> <a href="tel:+78123851005" style="color: var(--color-primary);">+7 (812)
+                    385 10 05</a>
+            </p>
             <button class="btn btn-primary btn-block" onclick="scrollToForm()" style="width: 100%;">
                 <i class="fas fa-phone"></i> Заказать звонок
             </button>
@@ -174,9 +179,9 @@
                 <div class="logo">
                     <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
                         <img src="images/partner/photo_2026-02-25_14-42-45.jpg"
-                            style="height: 30px; margin-right: 10px;" alt="GAIA Logo">
+                            style="height: 60px; margin-right: 12px;" alt="GAIA Logo">
                         <span
-                            style="font-weight: 800; color: var(--color-dark); font-size: 1.2rem; letter-spacing: 0.5px;">ГАЙЯ-РУ</span>
+                            class="logo-text">ГАЙЯ-РУ</span>
                     </a>
                 </div>
 
@@ -187,7 +192,9 @@
                     <a href="calculator.html" class="nav-link">Бенефиты</a>
                     <a href="team.html" class="nav-link">Команда</a>
                     <a href="about.html" class="nav-link active">О компании</a>
+                    <a href="videos.html" class="nav-link">Видеоролики</a>
                     <a href="contacts.html" class="nav-link">Контакты</a>
+                    <a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank" class="nav-link btn-account">Личный кабинет</a>
                 </nav>
 
                 <button class="mobile-menu-toggle" aria-label="Меню">
@@ -197,18 +204,33 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="section" style="padding-top: var(--spacing-xl);">
+    <!-- Page Banner -->
+    <section class="page-banner reveal">
+        <div class="container text-center">
+            <span class="banner-subtitle">О компании</span>
+            <h1 class="banner-title">Команда ГАЙЯ-РУ</h1>
+            <p class="banner-description">Более 8 лет на рынке России с инновационными решениями из Южной Кореи</p>
+        </div>
+    </section>
+
+    <!-- About Section (moved up) -->
+    <section class="section">
         <div class="container">
-            <p class="section-subtitle">О компании</p>
-            <h1 class="section-title">ГАЙЯ-РУ - официальный представитель</h1>
+            <div class="card reveal" style="max-width: 900px; margin: 0 auto;">
+                <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-md); font-size: 2rem;">
+                    <i class="fas fa-award"></i> ГАЙЯ — технология сушки органики
+                </h2>
+                <p style="color: var(--color-gray); font-size: var(--font-size-lg); line-height: 1.8;">
+                    Введено в эксплуатацию 22 объекта на территории РФ.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="section bg-light">
         <div class="container">
-            <div class="grid grid-3">
+            <div class="grid grid-4">
                 <div class="stats-card reveal">
                     <div class="stats-number">8+</div>
                     <div class="stats-label">Лет на рынке России</div>
@@ -216,27 +238,20 @@
 
                 <div class="stats-card reveal">
                     <div class="stats-number">1992</div>
-                    <div class="stats-label">Год создания технологии<br>(16 лет в замкнутом контуре)</div>
+                    <div class="stats-label">Год создания<br>технологии</div>
                 </div>
 
                 <div class="stats-card reveal">
-                    <div class="stats-number"><i class="fas fa-leaf"></i></div>
-                    <div class="stats-label">Экологическая безопасность:<br>отсутствие выбросов, запахов и стоков</div>
+                    <div class="stats-number">22+</div>
+                    <div class="stats-label">2025–2026:<br>более 22 проектов</div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="section">
-        <div class="container">
-            <div class="card reveal" style="max-width: 900px; margin: 0 auto;">
-                <h2 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">
-                    <i class="fas fa-award"></i> ГАЙЯ-технология сушки органики
-                </h2>
-                <p style="color: var(--color-gray); font-size: var(--font-size-lg); line-height: 1.8;">
-                    Введено в эксплуатацию 22 объекта на территории РФ.
-                </p>
+                <div class="stats-card reveal">
+                    <div class="stats-number">
+                        <img src="images/partner/photo_2026-02-25_14-42-45.jpg" alt="Eco" style="height: 50px; filter: brightness(0) invert(1);">
+                    </div>
+                    <div class="stats-label">Обеспечение экологической безопасности: отсутствие выбросов, запахов и сбросов</div>
+                </div>
             </div>
         </div>
     </section>
@@ -254,52 +269,73 @@
                     <div>
                         <h3 style="margin-bottom: var(--spacing-sm);">Работа с госорганами</h3>
                         <p style="color: var(--color-gray);">
-                            Мы активно взаимодействуем с Министерствами и Федеральными органами исполнительной власти
-                            (ФОИВ)
-                            для продвижения экологических инициатив и внедрения современных технологий переработки
-                            отходов.
+                            Работаем по 44 Федеральному Закону (государственные закупки).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" style="margin-bottom: var(--spacing-lg);">
+                <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
+                    <div style="font-size: 2.5rem; color: var(--color-primary);"><i class="fas fa-school"></i></div>
+                    <div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Проект: Школа №257</h3>
+                        <p style="color: var(--color-gray);">
+                            Реализация проекта в рамках государственного контракта по 44-ФЗ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" style="margin-bottom: var(--spacing-lg);">
+                <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
+                    <div style="font-size: 2.5rem; color: var(--color-primary);"><i class="fas fa-briefcase"></i></div>
+                    <div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Работа с бизнесом</h3>
+                        <p style="color: var(--color-gray);">
+                            Партнёрство с ведущими компаниями России.
                         </p>
                     </div>
                 </div>
             </div>
 
             <!-- Partners Logos -->
-            <div class="partners-grid">
-                <div class="partner-item reveal">
-                    <img src="images/partner/about_8_1x.png" alt="Partner Logo" class="partner-logo">
+            <div class="partners-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px; align-items: center; justify-items: center; margin-top: var(--spacing-lg);">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/about_8_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner2_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner2_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner3_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner3_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner5_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner5_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner6_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner6_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner7_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner7_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner8_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner8_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner9_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner9_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner10_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner10_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner13_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner13_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner15_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner15_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
-                <div class="partner-item reveal">
-                    <img src="images/partner/partner16_1x.png" alt="Partner Logo" class="partner-logo">
+                <div class="partner-item reveal" style="width: 100%; display: flex; justify-content: center; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s;">
+                    <img src="images/partner/partner16_1x.png" alt="Partner Logo" class="partner-logo" style="max-height: 80px; filter: grayscale(1) opacity(0.7); transition: all 0.3s; object-fit: contain;">
                 </div>
             </div>
         </div>
@@ -307,73 +343,6 @@
 
 
 
-    <!-- Video Library Section -->
-    <section class="section bg-dark" id="videos">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Видеотека</h2>
-            <p class="section-subtitle" style="color: var(--color-gray-light);">Технология в действии</p>
-
-            <div class="video-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-xl);">
-                <div class="reveal"
-                    style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div class="video-container"
-                        style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://rutube.ru/play/embed/75d08c7f74d5ff92389b317d8bb0ca5d" frameBorder="0"
-                            allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen
-                            allowFullScreen></iframe>
-                    </div>
-                    <div
-                        style="padding: var(--spacing-md); text-align: center; font-weight: 600; color: var(--color-dark);">
-                        Завод GAIA</div>
-                </div>
-                <div class="reveal"
-                    style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div class="video-container"
-                        style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://rutube.ru/play/embed/1cd42aea24408028d64167b9f855158e" frameBorder="0"
-                            allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen
-                            allowFullScreen></iframe>
-                    </div>
-                    <div
-                        style="padding: var(--spacing-md); text-align: center; font-weight: 600; color: var(--color-dark);">
-                        Утилизация яиц</div>
-                </div>
-                <div class="reveal"
-                    style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div class="video-container"
-                        style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://rutube.ru/play/embed/1cd41bf69523daf1d652fd3a3660376b" frameBorder="0"
-                            allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen
-                            allowFullScreen></iframe>
-                    </div>
-                    <div
-                        style="padding: var(--spacing-md); text-align: center; font-weight: 600; color: var(--color-dark);">
-                        Переработка отходов столовых</div>
-                </div>
-                <div class="reveal"
-                    style="background: var(--color-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
-                    <div class="video-container"
-                        style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://rutube.ru/play/embed/afb8662d7e4c5a8b1eff87996fe26d64" frameBorder="0"
-                            allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen
-                            allowFullScreen></iframe>
-                    </div>
-                    <div
-                        style="padding: var(--spacing-md); text-align: center; font-weight: 600; color: var(--color-dark);">
-                        Переработка рыбных отходов</div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: var(--spacing-lg);">
-                <a href="https://rutube.ru/channel/25504683/videos/" target="_blank" class="btn btn-primary">Смотреть
-                    все видео</a>
-            </div>
-        </div>
-    </section>
 
 
     <!-- FAQ Section -->
@@ -430,46 +399,68 @@
                     <div class="faq-answer">
                         <p>
                             Да, все оборудование ГАЙЯ полностью соответствует требованиям СанПиН и
-                            имеет все необходимые
-                            сертификаты
-                            для использования на территории Российской Федерации. Технология
-                            обеспечивает стерилизацию
-                            отходов при
-                            высокой температуре, что гарантирует безопасность конечного продукта.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="faq-item reveal">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>Можно ли перерабатывать биологические отходы?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>
-                            Да, технология ГАЙЯ позволяет перерабатывать сырье с высоким числом
-                            КМАФАнМ. Процесс сушки и
-                            стерилизации
-                            при высокой температуре обеспечивает полное уничтожение патогенных
-                            микроорганизмов. Это
-                            делает оборудование
-                            идеальным для переработки биологических отходов, включая мясные, рыбные
-                            и молочные продукты.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+               <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>ГАЙЯ-РУ</h3>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--spacing-md);">
+                        <img src="images/partner/photo_2026-02-25_14-42-45.jpg" style="height: 50px;" alt="GAIA Logo">
+                        <h3 style="margin-bottom: 0;">ГАЙЯ-РУ</h3>
+                    </div>
                     <p>Профессиональные решения для утилизации отходов.</p>
+
+                </div>
+
+                <div class="footer-section">
+                    <h3>Связь</h3>
+                    <p>
+                        <i class="fas fa-envelope"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="mailto:info@gaia-ru.com">info@gaia-ru.com</a>
+                    </p>
+                    <p style="font-size: 1.2rem; font-weight: 700;">
+                        <i class="fas fa-phone"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <a href="tel:+78123851005">+7 (812) 385 10 05</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"
+                            style="color: var(--color-primary); margin-right: var(--spacing-xs);"></i>
+                        <span>Санкт-Петербург,<br>Приморский пр-т, д.50, лит. Б</span>
+                    </p>
+                    <!-- Mini Map -->
+                    <a href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C+%D0%9F%D1%80%D0%B8%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D0%B9+%D0%BF%D1%80-%D1%82%2C+%D0%B4.50"
+                        target="_blank"
+                        style="display: block; margin-top: var(--spacing-sm); border-radius: var(--radius-sm); overflow: hidden; border: 2px solid rgba(46,204,113,0.3); transition: border-color 0.3s;"
+                        title="Открыть карту">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?ll=30.218049%2C59.988786&z=15&pt=30.218049,59.988786,pm2rdl"
+                            width="100%" height="150" frameborder="0" allowfullscreen="true"
+                            style="display: block;"></iframe>
+                    </a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <p><a href="index.html">Главная</a></p>
+                    <p><a href="catalog.html">Каталог</a></p>
+                    <p><a href="technology.html">О технологии</a></p>
+                    <p><a href="team.html">Команда</a></p>
+                    <p><a href="about.html">О компании</a></p>
+                    <p><a href="videos.html">Видеоролики</a></p>
+                    <p><a href="contacts.html">Контакты</a></p>
+                    <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
+                            style="color: var(--color-primary); font-weight: 600;">Личный кабинет</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> ГАЙЯ-РУ. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+�ии отходов.</p>
 
                 </div>
 
@@ -499,6 +490,7 @@
                     <p><a href="technology.html">О технологии</a></p>
                     <p><a href="team.html">Команда</a></p>
                     <p><a href="about.html">О компании</a></p>
+                    <p><a href="videos.html">Видеоролики</a></p>
                     <p><a href="contacts.html">Контакты</a></p>
                     <p><a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank"
                             style="color: var(--color-primary); font-weight: 600;">Личный

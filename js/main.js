@@ -52,45 +52,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Active Navigation Link
-    const sections = document.querySelectorAll('section[id]');
-    const navLinksAll = document.querySelectorAll('.nav-link');
-
     function setActiveNav() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
+        const currentPath = window.location.pathname;
+        const pageName = currentPath.split('/').pop() || 'index.html';
 
         navLinksAll.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+            
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            
+            // Exact match or matches the end of the path
+            const isMatch = href === pageName || 
+                           (pageName === 'index.html' && (href === '/' || href === 'index.html')) ||
+                           (currentPath.endsWith(href));
+            
+            if (isMatch) {
                 link.classList.add('active');
             }
         });
     }
 
-    window.addEventListener('scroll', setActiveNav);
+    // Set initial active nav on page load
+    setActiveNav();
 
     // Header Scroll Effect
     const header = document.querySelector('.header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', function () {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    
+    function updateHeader() {
+        if (window.pageYOffset > 50) {
+            header.classList.add('scrolled');
         } else {
-            header.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            header.classList.remove('scrolled');
         }
+    }
 
-        lastScroll = currentScroll;
-    });
+    window.addEventListener('scroll', updateHeader);
+    updateHeader(); // Initial check
 
     // Dynamic Year in Footer
     const yearElement = document.getElementById('current-year');
@@ -192,7 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Custom Cursor Logic
+    // Custom Cursor Logic - Disabled for usability (restoring system cursor)
+    /*
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
 
@@ -223,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cursorOutline.style.opacity = '1';
         });
     }
+    */
 
 
     console.log('GAIA Website initialized successfully!');
@@ -241,9 +241,13 @@ function showPopup() {
 
 function closePopup() {
     const popup = document.getElementById('callbackPopup');
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split('/').pop() || 'index.html';
+    
     if (popup) {
         popup.classList.remove('show');
-        localStorage.setItem('popupClosed', 'true');
+        // Make it per-page so it appears on other pages if they navigate
+        sessionStorage.setItem('popupClosed_' + pageName, 'true');
     }
 }
 
@@ -258,15 +262,14 @@ function scrollToForm() {
     }
 }
 
-// Show popup after 1 second if not previously closed
-// Using a separate listener or integrating into DOMContentLoaded for speed
+// Show popup after 2 seconds if not previously closed on THIS page
 document.addEventListener('DOMContentLoaded', function () {
-    // Keep existing DOMContentLoaded logic above...
-
-    // Popup specific logic that follows
-    const popupClosed = localStorage.getItem('popupClosed');
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split('/').pop() || 'index.html';
+    
+    const popupClosed = sessionStorage.getItem('popupClosed_' + pageName);
     if (!popupClosed) {
-        setTimeout(showPopup, 1000);
+        setTimeout(showPopup, 3000); // 3 seconds is more professional
     }
 
     // Handle scroll redirect from other pages
