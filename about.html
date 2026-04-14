@@ -21,6 +21,42 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <style>
+        /* Info blocks (non-clickable) for projects section */
+        .info-block {
+            background: transparent;
+            border: none;
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: none !important;
+            border-radius: 0;
+            transform: none !important;
+            cursor: default !important;
+            position: relative;
+            overflow: visible;
+        }
+        .info-block::before {
+            display: none !important;
+        }
+        .info-block:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        .info-block .info-icon {
+            font-size: 1.8rem;
+            color: var(--color-gray);
+            margin-bottom: var(--spacing-sm);
+        }
+        .info-block h3 {
+            font-size: var(--font-size-xl);
+            color: var(--color-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+        .info-block p {
+            color: var(--color-gray);
+            line-height: 1.7;
+        }
+
         .faq-item {
             background: var(--color-white);
             border-radius: var(--radius-md);
@@ -316,7 +352,7 @@
                     <div class="stats-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    <div class="stats-number">22+</div>
+                    <div class="stats-number">24+</div>
                     <div class="stats-label">Проектов в 2025–2026</div>
                 </div>
 
@@ -338,40 +374,22 @@
             <h2 class="section-title">Наши проекты и партнеры</h2>
             <p class="section-subtitle">Доверие на государственном уровне</p>
 
-            <div class="card reveal" style="margin-bottom: var(--spacing-lg);">
-                <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
-                    <div style="font-size: 2.5rem; color: var(--color-primary);"><i class="fas fa-landmark"></i></div>
-                    <div>
-                        <h3 style="margin-bottom: var(--spacing-sm);">Работа с госорганами</h3>
-                        <p style="color: var(--color-gray);">
-                            Работаем по 44 Федеральному Закону (государственные закупки).
-                        </p>
-                    </div>
-                </div>
+            <div class="info-block reveal">
+                <i class="fas fa-landmark info-icon"></i>
+                <h3>Работа с госорганами</h3>
+                <p>Работаем по 44 Федеральному Закону (государственные закупки).</p>
             </div>
 
-            <div class="card reveal" style="margin-bottom: var(--spacing-lg);">
-                <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
-                    <div style="font-size: 2.5rem; color: var(--color-primary);"><i class="fas fa-school"></i></div>
-                    <div>
-                        <h3 style="margin-bottom: var(--spacing-sm);">Проект: Школа №257</h3>
-                        <p style="color: var(--color-gray);">
-                            Реализация проекта в рамках государственного контракта по 44-ФЗ.
-                        </p>
-                    </div>
-                </div>
+            <div class="info-block reveal">
+                <i class="fas fa-school info-icon"></i>
+                <h3>Проект: Школа №257</h3>
+                <p>Реализация проекта в рамках государственного контракта по 44-ФЗ.</p>
             </div>
 
-            <div class="card reveal" style="margin-bottom: var(--spacing-lg);">
-                <div style="display: flex; align-items: flex-start; gap: var(--spacing-md);">
-                    <div style="font-size: 2.5rem; color: var(--color-primary);"><i class="fas fa-briefcase"></i></div>
-                    <div>
-                        <h3 style="margin-bottom: var(--spacing-sm);">Работа с бизнесом</h3>
-                        <p style="color: var(--color-gray);">
-                            Партнёрство с ведущими компаниями России.
-                        </p>
-                    </div>
-                </div>
+            <div class="info-block reveal">
+                <i class="fas fa-briefcase info-icon"></i>
+                <h3>Работа с бизнесом</h3>
+                <p>Партнёрство с ведущими компаниями России.</p>
             </div>
 
             <!-- Partners Logos -->
