@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -365,8 +365,7 @@
       <h3>Добрый день!</h3>
       <p>Меня зовут <strong>Александр</strong>. Мы можем вам перезвонить — оставьте заявку ниже. Либо позвоните
         нам сами:</p>
-      <p
-        style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
+      <p style="font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm);">
         <i class="fas fa-phone"></i> <a href="tel:+78123851005" style="color: var(--color-primary);">+7 (812)
           385 10 05</a>
       </p>
@@ -424,7 +423,8 @@
           <a href="about.html" class="nav-link">О компании</a>
           <a href="videos.html" class="nav-link">Видеоролики</a>
           <a href="contacts.html" class="nav-link">Контакты</a>
-          <a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank" class="nav-link btn-account">Личный кабинет</a>
+          <a href="https://gaiacorp.bitrix24.ru/pub/site/6/" target="_blank" class="nav-link btn-account">Личный
+            кабинет</a>
         </nav>
 
         <button class="mobile-menu-toggle" aria-label="Меню">
@@ -454,15 +454,13 @@
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start;">
               <i class="fas fa-shield-alt" style="color: var(--color-primary); margin-top: 6px; font-size: 1.4rem;"></i>
-              <span style="font-size: 1.1rem;"><strong>Соблюдение правил СанПиН:</strong> Полная стерилизация отходов исключает штрафы и предписания.</span>
-            </li>
-            <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
-              <i class="fas fa-shield-alt" style="color: var(--color-primary); margin-top: 5px;"></i>
-              <span><strong>Соблюдение правил СанПиН:</strong> Полная стерилизация отходов исключает штрафы и предписания.</span>
+              <span style="font-size: 1.1rem;"><strong>Соблюдение правил СанПиН:</strong> Полная стерилизация отходов
+                исключает штрафы и предписания.</span>
             </li>
             <li style="margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start;">
               <i class="fas fa-box" style="color: var(--color-primary); margin-top: 6px; font-size: 1.4rem;"></i>
-              <span style="font-size: 1.1rem;"><strong>Циркулярная экономика:</strong> Переработка отходов в полезный ресурс на месте образования.</span>
+              <span style="font-size: 1.1rem;"><strong>Циркулярная экономика:</strong> Переработка отходов в полезный
+                ресурс на месте образования.</span>
             </li>
             <li style="margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start;">
               <i class="fas fa-thumbs-up" style="color: var(--color-primary); margin-top: 5px;"></i>
@@ -502,7 +500,8 @@
               <div style="display: flex; gap: 10px;">
                 <input type="number" id="waste-amount" class="form-control" placeholder="Например: 1000"
                   style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
-                <select id="waste-unit" style="width: 80px; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; background: #fff; cursor: pointer; outline: none;">
+                <select id="waste-unit"
+                  style="width: 80px; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; background: #fff; cursor: pointer; outline: none;">
                   <option value="kg">кг</option>
                   <option value="t">тонн</option>
                 </select>
@@ -511,7 +510,8 @@
 
             <div id="energy-cost-group" class="form-group" style="margin-bottom: 15px;">
               <label style="font-weight: 600;">Стоимость электроэнергии (руб/кВт·ч):</label>
-              <input type="number" id="energy-cost" class="form-control" placeholder="Например: 10" min="0" step="0.1" value="8"
+              <input type="number" id="energy-cost" class="form-control" placeholder="Например: 10" min="0" step="0.1"
+                value="8"
                 style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border-color 0.3s;">
             </div>
 
@@ -565,8 +565,7 @@
     <div class="partner-card">
       <h3>Индивидуальные решения</h3>
       <p>Индивидуальные проекты любой сложности для вашего объекта</p>
-      <img src="images/IMG_9223.PNG"
-        alt="Индивидуальные решения">
+      <img src="images/IMG_9223.PNG" alt="Индивидуальные решения">
     </div>
   </div>
   </div>
@@ -610,7 +609,7 @@
       if (unit === 't') amount *= 1000;
 
       // Restriction: Gas models only available for 1000kg+ per day
-        if (activeTab === 'gas' && amount < 1000) {
+      if (activeTab === 'gas' && amount < 1000) {
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `
           <div class="reveal-inner" style="text-align: center; padding: 25px; background: #fff8eb; border: 2px solid #e67e22; border-radius: 12px; box-shadow: 0 4px 12px rgba(230, 126, 34, 0.1);">
@@ -669,15 +668,15 @@
           t.style.background = '#fff';
           t.style.color = '#333';
         });
-        
+
         tab.classList.add('active');
         const tabType = tab.dataset.tab;
-        
+
         // Update Card Theme
         const card = document.getElementById('calculator-card');
         card.classList.remove('mode-electric', 'mode-gas');
         card.classList.add('mode-' + tabType);
-        
+
         const energyGroup = document.getElementById('energy-cost-group');
         if (tabType === 'gas') {
           energyGroup.innerHTML = `
@@ -717,7 +716,8 @@
         <div class="footer-section">
           <div style="display: flex; align-items: center; gap: 0; margin-bottom: var(--spacing-md);">
             <img src="images/IMG_9223.PNG" style="height: 60px;" alt="GAIA Logo">
-            <span style="font-weight: 800; color: var(--color-white); font-size: clamp(1.1rem, 1.6vw, 1.35rem); letter-spacing: 0.2px; margin-left: -12px; z-index: 1;">ГАЙЯ-РУ</span>
+            <span
+              style="font-weight: 800; color: var(--color-white); font-size: clamp(1.1rem, 1.6vw, 1.35rem); letter-spacing: 0.2px; margin-left: -12px; z-index: 1;">ГАЙЯ-РУ</span>
           </div>
           <p>Профессиональные решения для утилизации отходов.</p>
         </div>
@@ -769,8 +769,7 @@
             target="_blank" class="footer-map-link"
             style="display: block; margin-top: 15px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(46,204,113,0.2); height: 80px;"
             title="Открыть карту">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=30.218049%2C59.988786&z=15&pt=30.218049,59.988786,pm2rdl"
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=30.218049%2C59.988786&z=15&pt=30.218049,59.988786,pm2rdl"
               width="100%" height="80" frameborder="0" allowfullscreen="true"
               style="display: block; pointer-events: none;"></iframe>
           </a>

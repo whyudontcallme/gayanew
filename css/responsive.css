@@ -238,6 +238,20 @@
         gap: var(--spacing-sm);
     }
 
+    .hero::before,
+    .page-banner::before {
+        background: 
+            radial-gradient(circle at 30% 30%, rgba(46, 204, 113, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 70% 60%, rgba(46, 204, 113, 0.3) 0%, transparent 50%);
+        animation: bgMorphMobile 10s ease-in-out infinite;
+        background-size: 150% 150%;
+    }
+
+    .hero::after,
+    .page-banner::after {
+        opacity: 0.5; /* Reduce complexity of conic gradients on mobile */
+    }
+
     /* ---- Buttons ---- */
     .btn {
         min-height: 48px;
@@ -397,6 +411,11 @@
 
     .banner-description {
         font-size: var(--font-size-base);
+    }
+    
+    .page-banner::before,
+    .page-banner::after {
+        background-size: 200% 200%;
     }
 
     /* ---- Partners Grid ---- */
@@ -686,7 +705,7 @@
     }
 
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         margin-left: -8px;
     }
 
